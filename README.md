@@ -98,9 +98,30 @@ tcm_health_system/
 - 演示数据可用 `python manage.py seed_demo --reset` 反复重置；`fixtures/demo_data.json` 为同一份数据的快照
   （`python manage.py loaddata fixtures/demo_data.json` 亦可导入）。
 
+### 关于仓库内的 `db.sqlite3`
+
+本仓库**故意提交了 `db.sqlite3`**（约 450 KB），克隆下来不用建库、不用造数，直接
+`python manage.py runserver` 就能看到完整数据：
+
+| 表 | 记录数 | 表 | 记录数 |
+|---|---|---|---|
+| 用户 `accounts_user` | 7 | 会员 `accounts_member` | 12 |
+| 服务分类 / 项目 | 5 / 14 | 套餐 / 套餐明细 | 5 / 11 |
+| 订单 / 订单明细 | 24 / 56 | 订单状态流水 | 45 |
+| 预约 / 预约附件 | 34 / 6 | 预约历史 / 操作日志 | 65 / 94 |
+
+- 想恢复出厂数据：`python manage.py seed_demo --reset`（会清空业务表后重新造数）。
+- 想切到 MySQL：按第二节建库后设置 `DB_ENGINE=mysql`，再执行 `migrate` + `seed_demo` 即可，
+  SQLite 文件不会被读取，可保留存档。
+- 演示账号（初始密码均为 `demo123456`）：`admin` 超级管理员、`service` 店长、`clerk` 前台、
+  `therapist` / `therapist2` 技师、`reporter` 统计员、`member01` 会员端。
+
 ## 七、多端呈现
 
 除本 Django 全栈系统外，同一套业务规则还做了两个纯静态版本，用于演示与答辩：
+
+> 说明：本仓库只收录 Django 系统本体（含数据库与文档）。下面两个静态演示版是本地演示材料，
+> 未纳入本仓库，路径以课程交付包为准。
 
 | 版本 | 目录 | 定位 |
 |---|---|---|
