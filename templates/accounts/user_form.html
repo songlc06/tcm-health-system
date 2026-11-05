@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}分配角色{% endblock %}
+{% block page_title %}分配角色 · {{ target_user.username }}{% endblock %}
+{% block breadcrumb %}<div class="crumb">角色决定默认权限组，附加权限组可叠加</div>{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-head">
+    <h2>用户信息</h2>
+    <a class="btn btn-sm btn-outline-secondary" href="{% url 'accounts:user_list' %}">返回列表</a>
+  </div>
+  <div class="card-body">
+    <form method="post" novalidate>
+      {% csrf_token %}
+      <div class="form-grid">
+        {% include "partials/form_field.html" with field=form.display_name %}
+        {% include "partials/form_field.html" with field=form.phone %}
+        {% include "partials/form_field.html" with field=form.role %}
+        {% include "partials/form_field.html" with field=form.groups %}
+        {% include "partials/form_field.html" with field=form.is_active %}
+      </div>
+      <div class="muted" style="margin-top:12px;font-size:12px">
+        提示：修改角色后系统会自动加入同名权限组（如「订单专员」），原附加权限组需手动调整。
+      </div>
+      <div style="margin-top:18px;display:flex;gap:8px">
+        <button class="btn btn-primary" type="submit">保存</button>
+        <a class="btn btn-outline-secondary" href="{% url 'accounts:user_list' %}">取消</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

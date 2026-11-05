@@ -1,0 +1,83 @@
+{% load static ui_tags %}<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}工作台{% endblock %} · 岐黄养生会员与服务预约管理系统</title>
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="{% url 'dashboard' %}">
+      <span class="brand-mark">岐</span>
+      <span class="brand-text">
+        <strong>岐黄养生</strong>
+        <small>会员 · 服务 · 预约</small>
+      </span>
+    </a>
+    <nav class="nav-list">
+      {% if not user.is_member %}
+      <a class="nav-item {% active_nav 'dashboard' %}" href="{% url 'dashboard' %}">
+        <span class="nav-icon">◉</span> 工作台
+      </a>
+      {% endif %}
+      {% for group in nav_groups %}
+        <div class="nav-group">{{ group.label }}</div>
+        {% for menu in group.items %}
+          <a class="nav-item {% active_nav menu.url_name %}" href="{% url menu.url_name %}">
+            <span class="nav-icon">·</span> {{ menu.name }}
+          </a>
+        {% endfor %}
+      {% endfor %}
+    </nav>
+    <div class="sidebar-foot">
+      <span>教学演示系统</span>
+      <span class="ver">v1.0</span>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="nav-toggle" type="button" aria-label="切换菜单"
+              onclick="document.body.classList.toggle('nav-open')">☰</button>
+      <div class="page-heading">
+        <h1>{% block page_title %}工作台{% endblock %}</h1>
+        {% block breadcrumb %}{% endblock %}
+      </div>
+      <div class="user-box">
+        <span class="avatar">{{ user.display_name|default:user.username|slice:":1" }}</span>
+        <span class="user-meta">
+          <strong>{{ user.display_name|default:user.username }}</strong>
+          <small>{{ user.get_role_display }}</small>
+        </span>
+        <a class="btn btn-sm btn-outline-secondary" href="{% url 'accounts:profile' %}">会员中心</a>
+        <form method="post" action="{% url 'accounts:logout' %}" class="d-inline">
+          {% csrf_token %}
+          <button class="btn btn-sm btn-outline-secondary" type="submit">退出</button>
+        </form>
+      </div>
+    </header>
+
+    <main class="content">
+      {% if messages %}
+        <div class="flash-stack">
+          {% for message in messages %}
+            <div class="flash flash-{{ message.tags|default:'info' }}">
+              <span>{{ message }}</span>
+              <button type="button" class="flash-close" onclick="this.parentElement.remove()">×</button>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</div>
+<script src="{% static 'vendor/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/app.js' %}"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>

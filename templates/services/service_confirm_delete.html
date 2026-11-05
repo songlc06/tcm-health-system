@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load ui_tags %}
+{% block title %}删除服务{% endblock %}
+{% block page_title %}删除养生服务{% endblock %}
+{% block breadcrumb %}<div class="crumb">删除前请确认服务未被套餐、订单或预约引用</div>{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-head"><h2>确认删除</h2></div>
+  <div class="card-body">
+    <div class="flash flash-warning" style="margin-bottom:16px">
+      删除后该服务将从列表中移除。若服务已被套餐或订单引用，系统会阻止删除并提示改为「下架」。
+    </div>
+    <dl class="dl">
+      <dt>服务编码</dt><dd class="mono">{{ object.code }}</dd>
+      <dt>服务名称</dt><dd>{{ object.name }}</dd>
+      <dt>所属分类</dt><dd>{{ object.category.name }}</dd>
+      <dt>价格</dt><dd>{{ object.price|money }} 元</dd>
+      <dt>状态</dt><dd><span class="badge-soft {{ object.status|badge }}">{{ object.get_status_display }}</span></dd>
+    </dl>
+    <form method="post" style="margin-top:20px;display:flex;gap:8px">
+      {% csrf_token %}
+      <button class="btn btn-accent" type="submit" data-confirm="确认删除服务「{{ object.name }}」？">确认删除</button>
+      <a class="btn btn-outline-secondary" href="{% url 'services:detail' object.pk %}">返回详情</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

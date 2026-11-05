@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}角色权限配置{% endblock %}
+{% block page_title %}角色权限配置 · {{ role.name }}{% endblock %}
+{% block breadcrumb %}<div class="crumb">勾选菜单与接口权限后保存，立即生效</div>{% endblock %}
+
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <div class="card">
+    <div class="card-head">
+      <h2>角色信息</h2>
+      <div style="display:flex;gap:8px">
+        <a class="btn btn-sm btn-outline-secondary" href="{% url 'accounts:role_list' %}">返回角色列表</a>
+        <button class="btn btn-sm btn-primary" type="submit">保存配置</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="form-grid">
+        <div class="field">
+          <label for="{{ form.name.id_for_label }}">角色名称</label>
+          {{ form.name }}
+        </div>
+        <div class="field">
+          <label>当前成员（{{ members|length }}）</label>
+          <div style="padding-top:6px">
+            {% for u in members %}
+              <span class="tag">{{ u.display_name|default:u.username }}</span>
+            {% empty %}<span class="muted">暂无成员</span>{% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <h2>菜单权限</h2>
+      <span class="sub">勾选菜单自动授予其对应接口权限</span>
+    </div>
+    <div class="card-body">
+      {% for group in menu_groups %}
+      <div class="perm-group">
+        <div class="perm-group-title">{{ group.label }}</div>
+        <div class="menu-checks">
+          {% for item in group.menus %}
+          <label class="menu-check {% if not item.required %}is-locked{% endif %}">
+            <input type="checkbox" name="menus" value="{{ item.menu.code }}"
+                   {% if item.checked %}checked{% endif %} {% if not item.required %}disabled{% endif %}>
+            <span>{{ item.menu.name }}</span>
+            {% if not item.required %}<small>按角色控制</small>{% endif %}
+          </label>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <h2>接口操作权限</h2>
+      <span class="sub">业务对象 × 操作，对应视图层的访问控制</span>
+    </div>
+    <div class="card-body">
+      {% for group in matrix %}
+      <div class="perm-group">
+        <div class="perm-group-title">{{ group.label }}</div>
+        {% for row in group.models %}
+        <div class="perm-row">
+          <div class="perm-model">{{ row.model }}</div>
+          <div class="perm-actions">
+            {% for item in row.items %}
+            <label class="perm-chip">
+              <input type="checkbox" name="perms" value="{{ item.perm.id }}"
+                     {% if item.perm.id in owned %}checked{% endif %}>
+              <span>{{ item.action }}</span>
+            </label>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+    <div class="pager" style="border-top:1px solid #efece2">
+      <span>共 {{ matrix|length }} 个业务分组，保存后角色权限立即生效</span>
+      <button class="btn btn-sm btn-primary" type="submit">保存配置</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

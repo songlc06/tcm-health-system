@@ -1,0 +1,62 @@
+{% load static %}<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>会员注册 · 岐黄养生会员与服务预约管理系统</title>
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+</head>
+<body>
+<div class="auth-wrap">
+  <section class="auth-side">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:38px">
+        <span class="brand-mark">岐</span>
+        <div>
+          <strong style="letter-spacing:2px">岐黄养生</strong>
+          <div style="font-size:11.5px;color:#9fb8aa;letter-spacing:2px">MEMBER REGISTRATION</div>
+        </div>
+      </div>
+      <h2>会员注册</h2>
+      <p>注册后可在线查看套餐订单、服务预约记录与个人健康档案；
+         到店服务时出示会员编号即可核销套餐次数。</p>
+      <div class="steps">
+        <div class="step"><i>1</i><span>填写账号与手机号，系统自动生成会员编号</span></div>
+        <div class="step"><i>2</i><span>补充体质与健康诉求，便于顾问安排合适的服务</span></div>
+        <div class="step"><i>3</i><span>注册完成自动登录，进入会员中心</span></div>
+      </div>
+    </div>
+    <div style="font-size:11.5px;color:#7e9a8a;letter-spacing:1px">教学实践项目 · 模拟业务数据</div>
+  </section>
+
+  <section class="auth-main">
+    <div class="auth-card" style="max-width:460px">
+      <h1>创建会员账号</h1>
+      <p class="lead">带 <span style="color:#b5452f">*</span> 为必填项</p>
+
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+          <div class="flash flash-error" style="margin-bottom:14px">{{ form.non_field_errors.0 }}</div>
+        {% endif %}
+        <div class="form-grid" style="grid-template-columns:1fr">
+          {% include "partials/form_field.html" with field=form.username %}
+          {% include "partials/form_field.html" with field=form.display_name %}
+          {% include "partials/form_field.html" with field=form.phone %}
+          {% include "partials/form_field.html" with field=form.gender %}
+          {% include "partials/form_field.html" with field=form.birthday %}
+          {% include "partials/form_field.html" with field=form.constitution %}
+          {% include "partials/form_field.html" with field=form.health_notes %}
+          {% include "partials/form_field.html" with field=form.password1 %}
+          {% include "partials/form_field.html" with field=form.password2 %}
+        </div>
+        <button class="btn btn-primary w-100" type="submit" style="margin-top:8px">注册并登录</button>
+      </form>
+
+      <div class="auth-foot">已有账号？<a href="{% url 'accounts:login' %}">返回登录 →</a></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+{% load static ui_tags %}
+{% block title %}统计报表{% endblock %}
+{% block page_title %}查询统计与图表{% endblock %}
+{% block breadcrumb %}<div class="crumb">学生 5 · Pandas 汇总 + ECharts 可视化</div>{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-head">
+    <h2>统计区间</h2>
+    <span class="sub">{{ stats.kpi.start }} 至 {{ stats.kpi.end }}（{{ stats.kpi.days }} 天）</span>
+  </div>
+  <div class="card-body">
+    <form method="get" class="filter-bar">
+      <div class="field">
+        <label>开始日期</label>
+        <input class="form-control" type="date" name="date_from" value="{{ date_from }}">
+      </div>
+      <div class="field">
+        <label>结束日期</label>
+        <input class="form-control" type="date" name="date_to" value="{{ date_to }}">
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">生成统计</button>
+        <a class="btn btn-outline-secondary" href="{% url 'reports:statistics' %}">近 30 天</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="kpi-grid">
+  <div class="kpi">
+    <div class="label">有效订单数</div>
+    <div class="value">{{ stats.kpi.order_count }}<span class="unit">单</span></div>
+  </div>
+  <div class="kpi accent">
+    <div class="label">服务收入</div>
+    <div class="value">{{ stats.kpi.revenue|money }}<span class="unit">元</span></div>
+  </div>
+  <div class="kpi">
+    <div class="label">客单价</div>
+    <div class="value">{{ stats.kpi.avg_order|money }}<span class="unit">元</span></div>
+  </div>
+  <div class="kpi">
+    <div class="label">预约总量</div>
+    <div class="value">{{ stats.kpi.appointment_count }}<span class="unit">单</span></div>
+  </div>
+  <div class="kpi">
+    <div class="label">预约完成率</div>
+    <div class="value">{{ stats.kpi.finish_rate }}<span class="unit">%</span></div>
+  </div>
+  <div class="kpi">
+    <div class="label">新增会员</div>
+    <div class="value">{{ stats.kpi.new_members }}<span class="unit">人</span></div>
+  </div>
+</div>
+
+<div class="stat-grid">
+  <div class="card">
+    <div class="card-head"><h2>每日收入与预约趋势</h2></div>
+    <div class="card-body"><div id="dailyChart" class="chart"></div></div>
+  </div>
+  <div class="card">
+    <div class="card-head"><h2>预约状态分布</h2></div>
+    <div class="card-body"><div id="statusChart" class="chart"></div></div>
+  </div>
+  <div class="card">
+    <div class="card-head"><h2>热门服务 TOP 8</h2></div>
+    <div class="card-body"><div id="topChart" class="chart"></div></div>
+  </div>
+  <div class="card">
+    <div class="card-head"><h2>下单会员等级分布</h2></div>
+    <div class="card-body"><div id="levelChart" class="chart"></div></div>
+  </div>
+</div>
+
+<div class="detail-grid">
+  <div class="card">
+    <div class="card-head"><h2>顾问服务工作量</h2><span class="sub">Pandas 分组汇总</span></div>
+    <div class="card-body tight table-wrap">
+      <table class="data">
+        <thead><tr><th>服务顾问</th><th>预约量</th><th>已完成</th><th>完成率</th></tr></thead>
+        <tbody>
+          {% for row in stats.therapist_rows %}
+          <tr>
+            <td class="strong">{{ row.name }}</td>
+            <td class="num">{{ row.total }}</td>
+            <td class="num">{{ row.finished }}</td>
+            <td>
+              <div class="item-progress" style="max-width:150px">
+                <div class="progress"><span style="width:{{ row.rate }}%"></span></div>
+                <small>{{ row.rate }}%</small>
+              </div>
+            </td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="4"><div class="empty">区间内暂无顾问数据</div></td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h2>套餐销售汇总</h2><span class="sub">按套餐维度</span></div>
+    <div class="card-body tight table-wrap">
+      <table class="data">
+        <thead><tr><th>套餐</th><th>订单数</th><th>金额(元)</th></tr></thead>
+        <tbody>
+          {% for row in stats.service_rows %}
+          <tr>
+            <td>{{ row.package }}</td>
+            <td class="num">{{ row.count }}</td>
+            <td class="num strong">{{ row.amount|money }}</td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="3"><div class="empty">区间内暂无订单数据</div></td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h2>报表说明</h2></div>
+  <div class="card-body" style="font-size:12.5px;color:#5f6f65;line-height:2">
+    统计口径：订单按「已付款 / 服务中 / 已完成」计入收入；预约按预约日期归集；会员等级按区间内下单会员去重统计。<br>
+    数据来源：MySQL / SQLite 业务表 → Pandas 清洗与分组汇总 → ECharts 渲染；区间内操作日志 {{ stats.log_count }} 条。
+  </div>
+</div>
+
+{{ stats.daily|json_script:"daily-data" }}
+{{ stats.status_pie|json_script:"status-data" }}
+{{ stats.top_services|json_script:"top-data" }}
+{{ stats.level_pie|json_script:"level-data" }}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'vendor/echarts.min.js' %}"></script>
+<script>
+(function () {
+  var daily = JSON.parse(document.getElementById('daily-data').textContent);
+  var status = JSON.parse(document.getElementById('status-data').textContent);
+  var top = JSON.parse(document.getElementById('top-data').textContent);
+  var level = JSON.parse(document.getElementById('level-data').textContent);
+  var ink = '#5f6f65', line = '#e5e0d3', palette = ['#2f6b4f', '#5b8f74', '#b7852f', '#b5452f', '#7c9c8b', '#c9a25a'];
+
+  var charts = [];
+  function init(id, option) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var c = echarts.init(el);
+    c.setOption(option);
+    charts.push(c);
+  }
+
+  init('dailyChart', {
+    color: ['#2f6b4f', '#b7852f'],
+    grid: { left: 50, right: 48, top: 40, bottom: 30 },
+    tooltip: { trigger: 'axis' },
+    legend: { data: ['服务收入(元)', '预约量'], top: 0, right: 0, textStyle: { color: ink, fontSize: 12 } },
+    xAxis: { type: 'category', data: daily.labels, axisLine: { lineStyle: { color: line } },
+             axisTick: { show: false }, axisLabel: { color: ink, interval: daily.labels.length > 20 ? 2 : 0 } },
+    yAxis: [
+      { type: 'value', name: '元', nameTextStyle: { color: ink, fontSize: 11 },
+        splitLine: { lineStyle: { color: '#f1eee4' } }, axisLabel: { color: ink } },
+      { type: 'value', name: '单', nameTextStyle: { color: ink, fontSize: 11 },
+        splitLine: { show: false }, axisLabel: { color: ink } }
+    ],
+    series: [
+      { name: '服务收入(元)', type: 'bar', barMaxWidth: 18, data: daily.order_amount,
+        itemStyle: { borderRadius: [4, 4, 0, 0], color: '#2f6b4f' } },
+      { name: '预约量', type: 'line', yAxisIndex: 1, smooth: true, symbolSize: 5,
+        data: daily.appointment_count, lineStyle: { width: 2 }, itemStyle: { color: '#b7852f' } }
+    ]
+  });
+
+  init('statusChart', {
+    tooltip: { trigger: 'item', formatter: '{b}: {c} 单 ({d}%)' },
+    legend: { bottom: 0, textStyle: { color: ink, fontSize: 11 }, itemWidth: 9, itemHeight: 9 },
+    color: palette,
+    series: [{
+      type: 'pie', radius: ['45%', '68%'], center: ['50%', '44%'],
+      itemStyle: { borderColor: '#fff', borderWidth: 2 },
+      label: { color: ink, fontSize: 11, formatter: '{b}\n{d}%' },
+      data: status.length ? status : [{ name: '暂无数据', value: 1 }]
+    }]
+  });
+
+  init('topChart', {
+    color: ['#5b8f74'],
+    grid: { left: 110, right: 24, top: 16, bottom: 24 },
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    xAxis: { type: 'value', splitLine: { lineStyle: { color: '#f1eee4' } }, axisLabel: { color: ink } },
+    yAxis: { type: 'category', data: top.labels, axisLine: { lineStyle: { color: line } },
+             axisTick: { show: false }, axisLabel: { color: ink, fontSize: 11.5 } },
+    series: [{ type: 'bar', data: top.values, barMaxWidth: 14,
+               itemStyle: { borderRadius: [0, 4, 4, 0] } }]
+  });
+
+  init('levelChart', {
+    tooltip: { trigger: 'item', formatter: '{b}: {c} 人' },
+    legend: { bottom: 0, textStyle: { color: ink, fontSize: 11 }, itemWidth: 9, itemHeight: 9 },
+    color: palette,
+    series: [{
+      type: 'pie', radius: '62%', center: ['50%', '44%'], roseType: 'radius',
+      itemStyle: { borderColor: '#fff', borderWidth: 2 },
+      label: { color: ink, fontSize: 11 },
+      data: level.length ? level : [{ name: '暂无数据', value: 1 }]
+    }]
+  });
+
+  window.addEventListener('resize', function () { charts.forEach(function (c) { c.resize(); }); });
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}登记预约{% endblock %}
+{% block page_title %}登记服务预约{% endblock %}
+{% block breadcrumb %}<div class="crumb">学生 4 · 预约登记，保存后进入待审核状态</div>{% endblock %}
+
+{% block content %}
+<form method="post" novalidate>
+  {% csrf_token %}
+  <div class="detail-grid">
+    <div class="card">
+      <div class="card-head">
+        <h2>预约信息</h2>
+        <a class="btn btn-sm btn-outline-secondary" href="{% url 'appointments:list' %}">返回列表</a>
+      </div>
+      <div class="card-body">
+        {% if form.non_field_errors %}<div class="flash flash-error">{{ form.non_field_errors.0 }}</div>{% endif %}
+        <div class="form-grid">
+          {% include "partials/form_field.html" with field=form.member %}
+          {% include "partials/form_field.html" with field=form.service %}
+          {% include "partials/form_field.html" with field=form.order_item %}
+          {% include "partials/form_field.html" with field=form.therapist %}
+          {% include "partials/form_field.html" with field=form.appoint_date %}
+          {% include "partials/form_field.html" with field=form.appoint_time %}
+          {% include "partials/form_field.html" with field=form.duration %}
+          {% include "partials/form_field.html" with field=form.source %}
+          {% include "partials/form_field.html" with field=form.contact_phone %}
+          {% include "partials/form_field.html" with field=form.remark wide=True %}
+        </div>
+        <div style="margin-top:18px;display:flex;gap:8px">
+          <button class="btn btn-primary" type="submit">提交预约</button>
+          <a class="btn btn-outline-secondary" href="{% url 'appointments:list' %}">取消</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>登记须知</h2></div>
+      <div class="card-body" style="font-size:12.5px;line-height:2;color:#5f6f65">
+        <p style="margin:0 0 10px">1. 预约日期不得早于今天，同一顾问同一时段只能有一条有效预约。</p>
+        <p style="margin:0 0 10px">2. 关联订单明细后，服务完成时系统自动扣减套餐次数。</p>
+        <p style="margin:0 0 10px">3. 提交后预约状态为「待审核」，需由具备审核权限的角色确认。</p>
+        <p style="margin:0">4. 服务过程中出现的迟到、身体不适等情况，请在详情页填写异常备注并上传附件。</p>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

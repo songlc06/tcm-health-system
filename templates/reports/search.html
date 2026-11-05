@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load ui_tags %}
+{% block title %}多条件查询{% endblock %}
+{% block page_title %}多条件查询{% endblock %}
+{% block breadcrumb %}<div class="crumb">学生 5 · 按时间、人员或业务对象检索，支持导出与打印</div>{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-head">
+    <h2>查询条件</h2>
+    <div style="display:flex;gap:8px">
+      {% if perms.core.export_report %}
+        <a class="btn btn-sm btn-outline-secondary"
+           href="{% url 'reports:export' %}?{{ request.GET.urlencode }}">导出 CSV</a>
+      {% endif %}
+      <a class="btn btn-sm btn-outline-secondary" target="_blank"
+         href="{% url 'reports:print' %}?{{ request.GET.urlencode }}">打印页面</a>
+    </div>
+  </div>
+  <div class="card-body">
+    <form method="get" class="filter-bar">
+      <div class="field">
+        <label>业务对象</label>
+        <select class="form-select" name="dataset">
+          {% for key, ds in datasets.items %}
+            <option value="{{ key }}" {% if dataset_key == key %}selected{% endif %}>{{ ds.title }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="field grow">
+        <label>关键字</label>
+        <input class="form-control" name="keyword" value="{{ keyword }}"
+               placeholder="单号 / 姓名 / 手机号 / 服务 / 动作">
+      </div>
+      <div class="field">
+        <label>{{ dataset.person_label }}</label>
+        <select class="form-select" name="person">
+          <option value="">全部</option>
+          {% for p in persons %}
+            <option value="{{ p.id }}" {% if person == p.id|stringformat:"s" %}selected{% endif %}>
+              {{ p.display_name|default:p.username }}（{{ p.get_role_display }}）</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label>状态 / 类别</label>
+        <select class="form-select" name="status">
+          <option value="">全部</option>
+          {% for value, label in status_choices %}
+            <option value="{{ value }}" {% if status == value %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label>{{ dataset.date_label }}从</label>
+        <input class="form-control" type="date" name="date_from" value="{{ date_from }}">
+      </div>
+      <div class="field">
+        <label>至</label>
+        <input class="form-control" type="date" name="date_to" value="{{ date_to }}">
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">查询</button>
+        <a class="btn btn-outline-secondary" href="{% url 'reports:search' %}">重置</a>
+      </div>
+    </form>
+  </div>
+
+  <div class="card-head" style="border-top:1px solid #efece2">
+    <h2>{{ dataset.title }}查询结果</h2>
+    <span class="sub">共 {{ total }} 条 · 当前显示 {{ rows|length }} 条</span>
+  </div>
+  <div class="table-wrap">
+    <table class="data">
+      <thead><tr>{% for h in headers %}<th>{{ h }}</th>{% endfor %}</tr></thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>{% for cell in row %}<td>{{ cell|default:"—" }}</td>{% endfor %}</tr>
+        {% empty %}
+        <tr><td colspan="{{ headers|length }}"><div class="empty"><span class="big">◇</span>没有符合条件的记录</div></td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% pager page_obj %}
+</div>
+{% endblock %}

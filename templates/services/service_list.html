@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load ui_tags %}
+{% block title %}养生服务{% endblock %}
+{% block page_title %}养生服务管理{% endblock %}
+{% block breadcrumb %}<div class="crumb">学生 2 · 服务项目新增、编辑、删除、详情与列表筛选</div>{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-head">
+    <h2>服务项目（{{ total }}）</h2>
+    <div style="display:flex;gap:8px">
+      {% if perms.services.export_healthservice %}
+        <a class="btn btn-sm btn-outline-secondary"
+           href="{% url 'services:export' %}?keyword={{ keyword }}">导出 CSV</a>
+      {% endif %}
+      {% if perms.services.add_healthservice %}
+        <a class="btn btn-sm btn-primary" href="{% url 'services:create' %}">＋ 新增服务</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="card-body">
+    <form method="get" class="filter-bar">
+      <div class="field grow">
+        <label>关键字</label>
+        <input class="form-control" name="keyword" value="{{ keyword }}"
+               placeholder="服务名称 / 编码 / 简介 / 适宜人群">
+      </div>
+      <div class="field">
+        <label>服务分类</label>
+        <select class="form-select" name="category">
+          <option value="">全部分类</option>
+          {% for c in categories %}
+            <option value="{{ c.id }}" {% if category_id == c.id|stringformat:"s" %}selected{% endif %}>{{ c.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label>状态</label>
+        <select class="form-select" name="status">
+          <option value="">全部</option>
+          <option value="on" {% if status == 'on' %}selected{% endif %}>上架（{{ on_count }}）</option>
+          <option value="off" {% if status == 'off' %}selected{% endif %}>下架（{{ off_count }}）</option>
+        </select>
+      </div>
+      <div class="field" style="min-width:100px">
+        <label>价格下限</label>
+        <input class="form-control" name="price_min" value="{{ price_min }}" placeholder="元">
+      </div>
+      <div class="field" style="min-width:100px">
+        <label>价格上限</label>
+        <input class="form-control" name="price_max" value="{{ price_max }}" placeholder="元">
+      </div>
+      <div class="field">
+        <label>排序</label>
+        <select class="form-select" name="sort">
+          <option value="">默认排序</option>
+          <option value="price_asc" {% if sort == 'price_asc' %}selected{% endif %}>价格从低到高</option>
+          <option value="price_desc" {% if sort == 'price_desc' %}selected{% endif %}>价格从高到低</option>
+          <option value="duration" {% if sort == 'duration' %}selected{% endif %}>按时长</option>
+          <option value="new" {% if sort == 'new' %}selected{% endif %}>最新创建</option>
+        </select>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">筛选</button>
+        <a class="btn btn-outline-secondary" href="{% url 'services:list' %}">重置</a>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-wrap">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>编码</th><th>服务名称</th><th>分类</th><th>时长</th>
+          <th>标准价</th><th>会员价</th><th>套餐引用</th><th>状态</th><th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for s in services %}
+        <tr data-href="{% url 'services:detail' s.pk %}">
+          <td class="mono">{{ s.code }}</td>
+          <td>
+            <div class="strong">{{ s.name }}
+              {% if s.is_hot %}<span class="badge-soft warning">热门</span>{% endif %}
+            </div>
+            <div class="muted" style="font-size:12px">{{ s.summary|default:"—"|truncatechars:36 }}</div>
+          </td>
+          <td>{{ s.category.name }}</td>
+          <td class="num">{{ s.duration }} 分钟</td>
+          <td class="num">{{ s.price|money }}</td>
+          <td class="num">{{ s.display_price|money }}</td>
+          <td class="num">{{ s.package_count }}</td>
+          <td><span class="badge-soft {{ s.status|badge }}">{{ s.get_status_display }}</span></td>
+          <td class="nowrap">
+            <a class="btn-link" href="{% url 'services:detail' s.pk %}">详情</a>
+            {% if perms.services.change_healthservice %}
+              <a class="btn-link" href="{% url 'services:update' s.pk %}">编辑</a>
+            {% endif %}
+            {% if perms.services.delete_healthservice %}
+              <a class="btn-link" style="color:#b5452f" href="{% url 'services:delete' s.pk %}">删除</a>
+            {% endif %}
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="9"><div class="empty"><span class="big">◇</span>没有符合条件的服务项目</div></td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% pager page_obj %}
+</div>
+{% endblock %}

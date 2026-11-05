@@ -1,0 +1,6309 @@
+[
+{
+  "model": "accounts.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$6nrfwtB3XpKv514GbAVecH$9BwrPulUIVYK25LIoT8pOHMc+sXnOzrX8uZNT+pDoHg=",
+    "last_login": "2026-11-04T22:55:07.386",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-11-04T22:51:57.996",
+    "role": "admin",
+    "display_name": "张启明",
+    "phone": "13800000001",
+    "last_login_ip": "",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$vVhdy8FjlNu0M3Fbp4nIZT$ghHXmOVZhp05CjaeuuK9MdkDYaZv9AEGS3eEikNwrQk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "service",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-11-04T22:51:58.317",
+    "role": "service_manager",
+    "display_name": "李慧芳",
+    "phone": "13800000002",
+    "last_login_ip": "",
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$LY74CAx9xD8uRlrkr25KEt$ttNZ3sBogU6L8jvSbGtlcAFaW96BQcIAvqY3W7kbttQ=",
+    "last_login": "2026-11-04T22:55:13.767",
+    "is_superuser": false,
+    "username": "clerk",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-11-04T22:51:58.602",
+    "role": "order_clerk",
+    "display_name": "王婷",
+    "phone": "13800000003",
+    "last_login_ip": "",
+    "groups": [
+      3
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$UTSExhVXJ0xQiautGoFpzi$MYcOQKjCHpzKR2Av3/j0SOsPS9ulQ/KR3laaBUcuqAI=",
+    "last_login": "2026-11-04T22:55:12.652",
+    "is_superuser": false,
+    "username": "therapist",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-11-04T22:51:59.029",
+    "role": "therapist",
+    "display_name": "陈志远",
+    "phone": "13800000004",
+    "last_login_ip": "",
+    "groups": [
+      4
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$8nn1YXAO5xpWo1dhEINjot$hWSZshWn+bYDSOSAZQfK4JqZwKXPJrWUOM1c7ndxZQU=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "therapist2",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-11-04T22:51:59.489",
+    "role": "therapist",
+    "display_name": "周敏",
+    "phone": "13800000005",
+    "last_login_ip": "",
+    "groups": [
+      4
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$c8mOY5CwDzlblIZeZehc5L$y+J5GSlqSlGZ8KzdABznwan72YCR8lc+Tkvlrw9XOIc=",
+    "last_login": "2026-11-04T22:55:14.811",
+    "is_superuser": false,
+    "username": "reporter",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-11-04T22:51:59.938",
+    "role": "reporter",
+    "display_name": "赵鑫",
+    "phone": "13800000006",
+    "last_login_ip": "",
+    "groups": [
+      5
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$HACdj6CMzbFd1dBdGPXnGW$2/upVyTOSRBm9ZXk9BLbvkQkFnm7NhSzZ3jnZWn9rCU=",
+    "last_login": "2026-11-04T22:55:11.642",
+    "is_superuser": false,
+    "username": "member01",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-11-04T22:52:00.415",
+    "role": "member",
+    "display_name": "宋青禾",
+    "phone": "13900000001",
+    "last_login_ip": "",
+    "groups": [
+      6
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.member",
+  "pk": 1,
+  "fields": {
+    "member_no": "HY2026110001",
+    "user": 7,
+    "name": "宋青禾",
+    "gender": "F",
+    "birthday": "1990-04-12",
+    "phone": "13900000001",
+    "level": "gold",
+    "points": 1280,
+    "balance": "0.00",
+    "constitution": "气虚质",
+    "health_notes": "长期伏案工作，颈肩僵硬，入睡困难。",
+    "allergy": "青霉素",
+    "tags": "肩颈不适,睡眠差",
+    "join_date": "2026-05-08",
+    "is_active": true,
+    "remark": "",
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.940",
+    "updated_at": "2026-11-04T22:52:00.940"
+  }
+},
+{
+  "model": "accounts.member",
+  "pk": 2,
+  "fields": {
+    "member_no": "HY2026110002",
+    "user": null,
+    "name": "林嘉言",
+    "gender": "M",
+    "birthday": "1985-09-03",
+    "phone": "13900000002",
+    "level": "silver",
+    "points": 760,
+    "balance": "0.00",
+    "constitution": "痰湿质",
+    "health_notes": "体形偏胖，易疲乏，晨起口黏。",
+    "allergy": "无",
+    "tags": "体重管理,湿气重",
+    "join_date": "2026-05-20",
+    "is_active": true,
+    "remark": "",
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.944",
+    "updated_at": "2026-11-04T22:52:00.944"
+  }
+},
+{
+  "model": "accounts.member",
+  "pk": 3,
+  "fields": {
+    "member_no": "HY2026110003",
+    "user": null,
+    "name": "许静姝",
+    "gender": "F",
+    "birthday": "1993-11-21",
+    "phone": "13900000003",
+    "level": "diamond",
+    "points": 3260,
+    "balance": "0.00",
+    "constitution": "阳虚质",
+    "health_notes": "手脚常年冰凉，经期小腹冷痛。",
+    "allergy": "海鲜",
+    "tags": "怕冷,经期腹痛",
+    "join_date": "2026-06-01",
+    "is_active": true,
+    "remark": "",
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.946",
+    "updated_at": "2026-11-04T22:52:00.946"
+  }
+},
+{
+  "model": "accounts.member",
+  "pk": 4,
+  "fields": {
+    "member_no": "HY2026110004",
+    "user": null,
+    "name": "陈慕白",
+    "gender": "M",
+    "birthday": "1978-02-17",
+    "phone": "13900000004",
+    "level": "bronze",
+    "points": 180,
+    "balance": "0.00",
+    "constitution": "平和质",
+    "health_notes": "久站工作，腰背酸胀。",
+    "allergy": "无",
+    "tags": "腰背酸痛",
+    "join_date": "2026-06-13",
+    "is_active": true,
+    "remark": "",
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.948",
+    "updated_at": "2026-11-04T22:52:00.948"
+  }
+},
+{
+  "model": "accounts.member",
+  "pk": 5,
+  "fields": {
+    "member_no": "HY2026110005",
+    "user": null,
+    "name": "周聽雨",
+    "gender": "F",
+    "birthday": "1996-07-08",
+    "phone": "13900000005",
+    "level": "silver",
+    "points": 920,
+    "balance": "0.00",
+    "constitution": "气郁质",
+    "health_notes": "工作压力大，易紧张性头痛。",
+    "allergy": "花粉",
+    "tags": "情绪紧张,头痛",
+    "join_date": "2026-06-25",
+    "is_active": true,
+    "remark": "",
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.949",
+    "updated_at": "2026-11-04T22:52:00.949"
+  }
+},
+{
+  "model": "accounts.member",
+  "pk": 6,
+  "fields": {
+    "member_no": "HY2026110006",
+    "user": null,
+    "name": "吴柏舟",
+    "gender": "M",
+    "birthday": "1988-12-30",
+    "phone": "13900000006",
+    "level": "gold",
+    "points": 1540,
+    "balance": "0.00",
+    "constitution": "湿热质",
+    "health_notes": "喜辛辣，易口苦咽干。",
+    "allergy": "无",
+    "tags": "易上火,口苦",
+    "join_date": "2026-07-07",
+    "is_active": true,
+    "remark": "",
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.951",
+    "updated_at": "2026-11-04T22:52:00.951"
+  }
+},
+{
+  "model": "accounts.member",
+  "pk": 7,
+  "fields": {
+    "member_no": "HY2026110007",
+    "user": null,
+    "name": "郑云舒",
+    "gender": "F",
+    "birthday": "1992-03-05",
+    "phone": "13900000007",
+    "level": "bronze",
+    "points": 260,
+    "balance": "0.00",
+    "constitution": "血瘀质",
+    "health_notes": "经期腹痛，血块较多。",
+    "allergy": "无",
+    "tags": "痛经,面色暗",
+    "join_date": "2026-07-19",
+    "is_active": true,
+    "remark": "",
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.952",
+    "updated_at": "2026-11-04T22:52:00.952"
+  }
+},
+{
+  "model": "accounts.member",
+  "pk": 8,
+  "fields": {
+    "member_no": "HY2026110008",
+    "user": null,
+    "name": "何砚清",
+    "gender": "M",
+    "birthday": "1975-06-19",
+    "phone": "13900000008",
+    "level": "silver",
+    "points": 640,
+    "balance": "0.00",
+    "constitution": "气虚质",
+    "health_notes": "体质偏虚，换季易感冒。",
+    "allergy": "磺胺",
+    "tags": "易感冒,乏力",
+    "join_date": "2026-07-31",
+    "is_active": true,
+    "remark": "",
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.954",
+    "updated_at": "2026-11-04T22:52:00.954"
+  }
+},
+{
+  "model": "accounts.member",
+  "pk": 9,
+  "fields": {
+    "member_no": "HY2026110009",
+    "user": null,
+    "name": "苏婉如",
+    "gender": "F",
+    "birthday": "1998-10-11",
+    "phone": "13900000009",
+    "level": "bronze",
+    "points": 120,
+    "balance": "0.00",
+    "constitution": "平和质",
+    "health_notes": "产后半年，腰膝酸软。",
+    "allergy": "无",
+    "tags": "产后调理",
+    "join_date": "2026-08-12",
+    "is_active": true,
+    "remark": "",
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.956",
+    "updated_at": "2026-11-04T22:52:00.956"
+  }
+},
+{
+  "model": "accounts.member",
+  "pk": 10,
+  "fields": {
+    "member_no": "HY2026110010",
+    "user": null,
+    "name": "唐子墨",
+    "gender": "M",
+    "birthday": "2018-05-22",
+    "phone": "13900000010",
+    "level": "bronze",
+    "points": 80,
+    "balance": "0.00",
+    "constitution": "平和质",
+    "health_notes": "食欲不佳，夜间磨牙。",
+    "allergy": "无",
+    "tags": "小儿积食",
+    "join_date": "2026-08-24",
+    "is_active": true,
+    "remark": "",
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.958",
+    "updated_at": "2026-11-04T22:52:00.958"
+  }
+},
+{
+  "model": "accounts.member",
+  "pk": 11,
+  "fields": {
+    "member_no": "HY2026110011",
+    "user": null,
+    "name": "方曼卿",
+    "gender": "F",
+    "birthday": "1983-08-14",
+    "phone": "13900000011",
+    "level": "gold",
+    "points": 1870,
+    "balance": "0.00",
+    "constitution": "阳虚质",
+    "health_notes": "畏寒肢冷，睡眠浅易醒。",
+    "allergy": "无",
+    "tags": "怕冷,睡眠差",
+    "join_date": "2026-09-05",
+    "is_active": true,
+    "remark": "",
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.960",
+    "updated_at": "2026-11-04T22:52:00.960"
+  }
+},
+{
+  "model": "accounts.member",
+  "pk": 12,
+  "fields": {
+    "member_no": "HY2026110012",
+    "user": null,
+    "name": "罗清和",
+    "gender": "M",
+    "birthday": "1991-01-27",
+    "phone": "13900000012",
+    "level": "diamond",
+    "points": 4120,
+    "balance": "0.00",
+    "constitution": "平和质",
+    "health_notes": "健身爱好者，运动后肌肉紧张。",
+    "allergy": "无",
+    "tags": "健身,运动恢复",
+    "join_date": "2026-09-17",
+    "is_active": true,
+    "remark": "",
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.961",
+    "updated_at": "2026-11-04T22:52:00.961"
+  }
+},
+{
+  "model": "services.servicecategory",
+  "pk": 1,
+  "fields": {
+    "name": "针灸推拿",
+    "code": "TUINA",
+    "description": "传统推拿与针灸，疏通经络、缓解疼痛",
+    "sort_order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "services.servicecategory",
+  "pk": 2,
+  "fields": {
+    "name": "艾灸理疗",
+    "code": "MOXA",
+    "description": "以艾温阳，适用于虚寒体质与亚健康调理",
+    "sort_order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "services.servicecategory",
+  "pk": 3,
+  "fields": {
+    "name": "中药调理",
+    "code": "HERB",
+    "description": "中药熏蒸、足浴、穴位贴敷等外治调理",
+    "sort_order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "services.servicecategory",
+  "pk": 4,
+  "fields": {
+    "name": "经络养生",
+    "code": "MERIDIAN",
+    "description": "经络疏通、刮痧拔罐与体质辨识",
+    "sort_order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "services.servicecategory",
+  "pk": 5,
+  "fields": {
+    "name": "小儿推拿",
+    "code": "PEDIATRIC",
+    "description": "儿童常见问题的绿色调理手法",
+    "sort_order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "services.healthservice",
+  "pk": 1,
+  "fields": {
+    "code": "SVC001",
+    "name": "经络推拿",
+    "category": 1,
+    "summary": "全身经络推拿，疏通气血、缓解疲劳",
+    "description": "全身经络推拿，疏通气血、缓解疲劳。服务流程：体质问询 → 手法调理 → 术后嘱托。建议每周 1-2 次，连续调理效果更佳。",
+    "duration": 60,
+    "price": "298.00",
+    "member_price": "268.00",
+    "suitable_for": "久坐人群、肩颈腰背酸胀者",
+    "contraindication": "皮肤破损、急性外伤期禁做",
+    "status": "on",
+    "is_hot": true,
+    "sort_order": 0,
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.902",
+    "updated_at": "2026-11-04T22:52:00.902"
+  }
+},
+{
+  "model": "services.healthservice",
+  "pk": 2,
+  "fields": {
+    "code": "SVC002",
+    "name": "肩颈调理推拿",
+    "category": 1,
+    "summary": "针对颈肩劳损的局部推拿手法",
+    "description": "针对颈肩劳损的局部推拿手法。服务流程：体质问询 → 手法调理 → 术后嘱托。建议每周 1-2 次，连续调理效果更佳。",
+    "duration": 45,
+    "price": "258.00",
+    "member_price": "228.00",
+    "suitable_for": "长期伏案、颈椎不适人群",
+    "contraindication": "颈椎骨折、严重骨质疏松者慎用",
+    "status": "on",
+    "is_hot": true,
+    "sort_order": 1,
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.903",
+    "updated_at": "2026-11-04T22:52:00.903"
+  }
+},
+{
+  "model": "services.healthservice",
+  "pk": 3,
+  "fields": {
+    "code": "SVC003",
+    "name": "温针灸",
+    "category": 1,
+    "summary": "针刺配合艾灸温通经络",
+    "description": "针刺配合艾灸温通经络。服务流程：体质问询 → 手法调理 → 术后嘱托。建议每周 1-2 次，连续调理效果更佳。",
+    "duration": 40,
+    "price": "218.00",
+    "member_price": "198.00",
+    "suitable_for": "寒湿痹痛、关节冷痛者",
+    "contraindication": "出血倾向、孕期腰骶部禁用",
+    "status": "on",
+    "is_hot": false,
+    "sort_order": 2,
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.904",
+    "updated_at": "2026-11-04T22:52:00.904"
+  }
+},
+{
+  "model": "services.healthservice",
+  "pk": 4,
+  "fields": {
+    "code": "SVC004",
+    "name": "头部经络放松",
+    "category": 1,
+    "summary": "头部穴位按揉，改善睡眠与紧张性头痛",
+    "description": "头部穴位按揉，改善睡眠与紧张性头痛。服务流程：体质问询 → 手法调理 → 术后嘱托。建议每周 1-2 次，连续调理效果更佳。",
+    "duration": 40,
+    "price": "138.00",
+    "member_price": "128.00",
+    "suitable_for": "失眠、用脑过度人群",
+    "contraindication": "头皮破损、急性发热期不宜",
+    "status": "on",
+    "is_hot": false,
+    "sort_order": 3,
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.905",
+    "updated_at": "2026-11-04T22:52:00.905"
+  }
+},
+{
+  "model": "services.healthservice",
+  "pk": 5,
+  "fields": {
+    "code": "SVC005",
+    "name": "艾灸温阳调理",
+    "category": 2,
+    "summary": "任脉督脉温和灸，温补阳气",
+    "description": "任脉督脉温和灸，温补阳气。服务流程：体质问询 → 手法调理 → 术后嘱托。建议每周 1-2 次，连续调理效果更佳。",
+    "duration": 60,
+    "price": "268.00",
+    "member_price": "238.00",
+    "suitable_for": "阳虚怕冷、经期腹痛者",
+    "contraindication": "实热体质、皮肤过敏者慎用",
+    "status": "on",
+    "is_hot": true,
+    "sort_order": 4,
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.906",
+    "updated_at": "2026-11-04T22:52:00.906"
+  }
+},
+{
+  "model": "services.healthservice",
+  "pk": 6,
+  "fields": {
+    "code": "SVC006",
+    "name": "督脉艾灸",
+    "category": 2,
+    "summary": "督脉铺灸，调理全身阳气",
+    "description": "督脉铺灸，调理全身阳气。服务流程：体质问询 → 手法调理 → 术后嘱托。建议每周 1-2 次，连续调理效果更佳。",
+    "duration": 50,
+    "price": "328.00",
+    "member_price": "298.00",
+    "suitable_for": "体虚易感冒、慢性疲劳者",
+    "contraindication": "高热、急性炎症期禁用",
+    "status": "on",
+    "is_hot": false,
+    "sort_order": 5,
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.907",
+    "updated_at": "2026-11-04T22:52:00.907"
+  }
+},
+{
+  "model": "services.healthservice",
+  "pk": 7,
+  "fields": {
+    "code": "SVC007",
+    "name": "中药熏蒸",
+    "category": 3,
+    "summary": "中药蒸汽熏蒸，祛湿散寒",
+    "description": "中药蒸汽熏蒸，祛湿散寒。服务流程：体质问询 → 手法调理 → 术后嘱托。建议每周 1-2 次，连续调理效果更佳。",
+    "duration": 45,
+    "price": "228.00",
+    "member_price": "208.00",
+    "suitable_for": "湿气重、关节僵硬者",
+    "contraindication": "高血压未控制、心功能不全者禁用",
+    "status": "on",
+    "is_hot": false,
+    "sort_order": 6,
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.907",
+    "updated_at": "2026-11-04T22:52:00.907"
+  }
+},
+{
+  "model": "services.healthservice",
+  "pk": 8,
+  "fields": {
+    "code": "SVC008",
+    "name": "中药足浴",
+    "category": 3,
+    "summary": "足部药浴配合足底按摩",
+    "description": "足部药浴配合足底按摩。服务流程：体质问询 → 手法调理 → 术后嘱托。建议每周 1-2 次，连续调理效果更佳。",
+    "duration": 40,
+    "price": "98.00",
+    "member_price": "88.00",
+    "suitable_for": "手脚冰凉、睡眠不佳者",
+    "contraindication": "糖尿病足、下肢静脉曲张者慎用",
+    "status": "on",
+    "is_hot": false,
+    "sort_order": 7,
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.909",
+    "updated_at": "2026-11-04T22:52:00.909"
+  }
+},
+{
+  "model": "services.healthservice",
+  "pk": 9,
+  "fields": {
+    "code": "SVC009",
+    "name": "穴位埋线",
+    "category": 3,
+    "summary": "穴位埋线调理脾胃与体重管理",
+    "description": "穴位埋线调理脾胃与体重管理。服务流程：体质问询 → 手法调理 → 术后嘱托。建议每周 1-2 次，连续调理效果更佳。",
+    "duration": 45,
+    "price": "358.00",
+    "member_price": "328.00",
+    "suitable_for": "单纯性肥胖、脾胃虚弱者",
+    "contraindication": "瘢痕体质、孕期禁用",
+    "status": "on",
+    "is_hot": false,
+    "sort_order": 8,
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.910",
+    "updated_at": "2026-11-04T22:52:00.910"
+  }
+},
+{
+  "model": "services.healthservice",
+  "pk": 10,
+  "fields": {
+    "code": "SVC010",
+    "name": "拔罐祛湿",
+    "category": 4,
+    "summary": "留罐与走罐结合，祛湿通络",
+    "description": "留罐与走罐结合，祛湿通络。服务流程：体质问询 → 手法调理 → 术后嘱托。建议每周 1-2 次，连续调理效果更佳。",
+    "duration": 30,
+    "price": "128.00",
+    "member_price": "118.00",
+    "suitable_for": "湿重、肌肉酸痛人群",
+    "contraindication": "皮肤过敏、凝血功能障碍者禁用",
+    "status": "on",
+    "is_hot": true,
+    "sort_order": 9,
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.911",
+    "updated_at": "2026-11-04T22:52:00.911"
+  }
+},
+{
+  "model": "services.healthservice",
+  "pk": 11,
+  "fields": {
+    "code": "SVC011",
+    "name": "刮痧排毒",
+    "category": 4,
+    "summary": "经络刮痧，改善循环",
+    "description": "经络刮痧，改善循环。服务流程：体质问询 → 手法调理 → 术后嘱托。建议每周 1-2 次，连续调理效果更佳。",
+    "duration": 40,
+    "price": "158.00",
+    "member_price": "148.00",
+    "suitable_for": "肩背僵硬、易疲劳者",
+    "contraindication": "皮肤病、孕期腹部禁用",
+    "status": "on",
+    "is_hot": false,
+    "sort_order": 10,
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.912",
+    "updated_at": "2026-11-04T22:52:00.912"
+  }
+},
+{
+  "model": "services.healthservice",
+  "pk": 12,
+  "fields": {
+    "code": "SVC012",
+    "name": "体质辨识与调理方案",
+    "category": 4,
+    "summary": "中医体质辨识并出具调理建议",
+    "description": "中医体质辨识并出具调理建议。服务流程：体质问询 → 手法调理 → 术后嘱托。建议每周 1-2 次，连续调理效果更佳。",
+    "duration": 60,
+    "price": "198.00",
+    "member_price": "168.00",
+    "suitable_for": "所有亚健康人群",
+    "contraindication": "无特殊禁忌",
+    "status": "on",
+    "is_hot": false,
+    "sort_order": 11,
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.913",
+    "updated_at": "2026-11-04T22:52:00.913"
+  }
+},
+{
+  "model": "services.healthservice",
+  "pk": 13,
+  "fields": {
+    "code": "SVC013",
+    "name": "小儿推拿（脾胃）",
+    "category": 5,
+    "summary": "小儿脾胃调理推拿",
+    "description": "小儿脾胃调理推拿。服务流程：体质问询 → 手法调理 → 术后嘱托。建议每周 1-2 次，连续调理效果更佳。",
+    "duration": 30,
+    "price": "168.00",
+    "member_price": "148.00",
+    "suitable_for": "积食、食欲不振儿童",
+    "contraindication": "皮肤破损、急性传染病期禁用",
+    "status": "on",
+    "is_hot": true,
+    "sort_order": 12,
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.914",
+    "updated_at": "2026-11-04T22:52:00.914"
+  }
+},
+{
+  "model": "services.healthservice",
+  "pk": 14,
+  "fields": {
+    "code": "SVC014",
+    "name": "小儿推拿（助长）",
+    "category": 5,
+    "summary": "小儿助长保健推拿",
+    "description": "小儿助长保健推拿。服务流程：体质问询 → 手法调理 → 术后嘱托。建议每周 1-2 次，连续调理效果更佳。",
+    "duration": 30,
+    "price": "178.00",
+    "member_price": "158.00",
+    "suitable_for": "生长发育期儿童",
+    "contraindication": "发热、急性感染期不宜",
+    "status": "on",
+    "is_hot": false,
+    "sort_order": 13,
+    "created_by": 2,
+    "created_at": "2026-11-04T22:52:00.915",
+    "updated_at": "2026-11-04T22:52:00.915"
+  }
+},
+{
+  "model": "orders.package",
+  "pk": 1,
+  "fields": {
+    "code": "PKG001",
+    "name": "肩颈舒缓 10 次卡",
+    "description": "针对伏案人群的肩颈综合调理，含推拿与经络疏通",
+    "price": "2380.00",
+    "member_price": "2180.00",
+    "valid_days": 365,
+    "status": "on",
+    "is_recommended": true,
+    "created_at": "2026-11-04T22:52:00.916"
+  }
+},
+{
+  "model": "orders.package",
+  "pk": 2,
+  "fields": {
+    "code": "PKG002",
+    "name": "艾灸温阳 12 次卡",
+    "description": "阳虚体质温补套餐，艾灸为主、督脉为辅",
+    "price": "2880.00",
+    "member_price": "2680.00",
+    "valid_days": 365,
+    "status": "on",
+    "is_recommended": true,
+    "created_at": "2026-11-04T22:52:00.920"
+  }
+},
+{
+  "model": "orders.package",
+  "pk": 3,
+  "fields": {
+    "code": "PKG003",
+    "name": "祛湿排毒 8 次卡",
+    "description": "拔罐与刮痧组合，适合湿气重、易疲劳人群",
+    "price": "1080.00",
+    "member_price": "980.00",
+    "valid_days": 180,
+    "status": "on",
+    "is_recommended": false,
+    "created_at": "2026-11-04T22:52:00.923"
+  }
+},
+{
+  "model": "orders.package",
+  "pk": 4,
+  "fields": {
+    "code": "PKG004",
+    "name": "产后调理 15 次卡",
+    "description": "产后经络调理、艾灸温阳与中药熏蒸组合",
+    "price": "4380.00",
+    "member_price": "3980.00",
+    "valid_days": 365,
+    "status": "on",
+    "is_recommended": false,
+    "created_at": "2026-11-04T22:52:00.928"
+  }
+},
+{
+  "model": "orders.package",
+  "pk": 5,
+  "fields": {
+    "code": "PKG005",
+    "name": "小儿推拿月卡 12 次",
+    "description": "儿童脾胃调理与助长保健，30 天有效",
+    "price": "1680.00",
+    "member_price": "1580.00",
+    "valid_days": 90,
+    "status": "on",
+    "is_recommended": false,
+    "created_at": "2026-11-04T22:52:00.933"
+  }
+},
+{
+  "model": "orders.packageitem",
+  "pk": 1,
+  "fields": {
+    "package": 1,
+    "service": 2,
+    "times": 6,
+    "remark": ""
+  }
+},
+{
+  "model": "orders.packageitem",
+  "pk": 2,
+  "fields": {
+    "package": 1,
+    "service": 1,
+    "times": 4,
+    "remark": ""
+  }
+},
+{
+  "model": "orders.packageitem",
+  "pk": 3,
+  "fields": {
+    "package": 2,
+    "service": 5,
+    "times": 8,
+    "remark": ""
+  }
+},
+{
+  "model": "orders.packageitem",
+  "pk": 4,
+  "fields": {
+    "package": 2,
+    "service": 6,
+    "times": 4,
+    "remark": ""
+  }
+},
+{
+  "model": "orders.packageitem",
+  "pk": 5,
+  "fields": {
+    "package": 3,
+    "service": 10,
+    "times": 4,
+    "remark": ""
+  }
+},
+{
+  "model": "orders.packageitem",
+  "pk": 6,
+  "fields": {
+    "package": 3,
+    "service": 11,
+    "times": 4,
+    "remark": ""
+  }
+},
+{
+  "model": "orders.packageitem",
+  "pk": 7,
+  "fields": {
+    "package": 4,
+    "service": 1,
+    "times": 6,
+    "remark": ""
+  }
+},
+{
+  "model": "orders.packageitem",
+  "pk": 8,
+  "fields": {
+    "package": 4,
+    "service": 5,
+    "times": 5,
+    "remark": ""
+  }
+},
+{
+  "model": "orders.packageitem",
+  "pk": 9,
+  "fields": {
+    "package": 4,
+    "service": 7,
+    "times": 4,
+    "remark": ""
+  }
+},
+{
+  "model": "orders.packageitem",
+  "pk": 10,
+  "fields": {
+    "package": 5,
+    "service": 13,
+    "times": 8,
+    "remark": ""
+  }
+},
+{
+  "model": "orders.packageitem",
+  "pk": 11,
+  "fields": {
+    "package": 5,
+    "service": 14,
+    "times": 4,
+    "remark": ""
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 1,
+  "fields": {
+    "order_no": "TK202610200001",
+    "member": 1,
+    "package": 2,
+    "quantity": 1,
+    "unit_price": "2680.00",
+    "total_amount": "2786.40",
+    "discount_amount": "0.00",
+    "pay_amount": "2786.40",
+    "status": "completed",
+    "salesperson": 3,
+    "remark": "",
+    "cancel_reason": "",
+    "created_at": "2026-10-20T13:51:00.964",
+    "updated_at": "2026-11-04T22:52:00.968",
+    "paid_at": "2026-10-21T09:51:00.964",
+    "completed_at": "2026-11-02T09:51:00.964"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 2,
+  "fields": {
+    "order_no": "TK202611040001",
+    "member": 11,
+    "package": 4,
+    "quantity": 1,
+    "unit_price": "3980.00",
+    "total_amount": "3267.00",
+    "discount_amount": "0.00",
+    "pay_amount": "3267.00",
+    "status": "refunded",
+    "salesperson": 3,
+    "remark": "会员希望周末到店服务",
+    "cancel_reason": "",
+    "created_at": "2026-11-04T14:57:00.964",
+    "updated_at": "2026-11-04T22:52:00.973",
+    "paid_at": "2026-11-05T06:57:00.964",
+    "completed_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 3,
+  "fields": {
+    "order_no": "TK202610090001",
+    "member": 1,
+    "package": 2,
+    "quantity": 1,
+    "unit_price": "2680.00",
+    "total_amount": "2786.40",
+    "discount_amount": "0.00",
+    "pay_amount": "2786.40",
+    "status": "completed",
+    "salesperson": 3,
+    "remark": "老会员续卡",
+    "cancel_reason": "",
+    "created_at": "2026-10-09T21:03:00.964",
+    "updated_at": "2026-11-04T22:52:00.977",
+    "paid_at": "2026-10-10T08:03:00.964",
+    "completed_at": "2026-10-19T08:03:00.964"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 4,
+  "fields": {
+    "order_no": "TK202610110001",
+    "member": 4,
+    "package": 4,
+    "quantity": 1,
+    "unit_price": "3980.00",
+    "total_amount": "3630.00",
+    "discount_amount": "200.00",
+    "pay_amount": "3430.00",
+    "status": "paid",
+    "salesperson": 3,
+    "remark": "老会员续卡",
+    "cancel_reason": "",
+    "created_at": "2026-10-11T15:28:00.964",
+    "updated_at": "2026-11-04T22:52:00.982",
+    "paid_at": "2026-10-11T22:28:00.964",
+    "completed_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 5,
+  "fields": {
+    "order_no": "TK202611030001",
+    "member": 10,
+    "package": 5,
+    "quantity": 1,
+    "unit_price": "1580.00",
+    "total_amount": "1816.00",
+    "discount_amount": "150.00",
+    "pay_amount": "1666.00",
+    "status": "pending",
+    "salesperson": 3,
+    "remark": "",
+    "cancel_reason": "",
+    "created_at": "2026-11-03T14:32:00.964",
+    "updated_at": "2026-11-04T22:52:00.985",
+    "paid_at": null,
+    "completed_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 6,
+  "fields": {
+    "order_no": "TK202610280001",
+    "member": 5,
+    "package": 4,
+    "quantity": 1,
+    "unit_price": "3980.00",
+    "total_amount": "3448.50",
+    "discount_amount": "0.00",
+    "pay_amount": "3448.50",
+    "status": "pending",
+    "salesperson": 3,
+    "remark": "",
+    "cancel_reason": "",
+    "created_at": "2026-10-28T14:02:00.964",
+    "updated_at": "2026-11-04T22:52:00.988",
+    "paid_at": null,
+    "completed_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 7,
+  "fields": {
+    "order_no": "TK202610110002",
+    "member": 4,
+    "package": 2,
+    "quantity": 1,
+    "unit_price": "2680.00",
+    "total_amount": "3096.00",
+    "discount_amount": "0.00",
+    "pay_amount": "3096.00",
+    "status": "completed",
+    "salesperson": 3,
+    "remark": "",
+    "cancel_reason": "",
+    "created_at": "2026-10-11T16:12:00.964",
+    "updated_at": "2026-11-04T22:52:00.992",
+    "paid_at": "2026-10-11T21:12:00.964",
+    "completed_at": "2026-10-23T21:12:00.964"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 8,
+  "fields": {
+    "order_no": "TK202610080001",
+    "member": 1,
+    "package": 5,
+    "quantity": 1,
+    "unit_price": "1580.00",
+    "total_amount": "1634.40",
+    "discount_amount": "150.00",
+    "pay_amount": "1484.40",
+    "status": "cancelled",
+    "salesperson": 3,
+    "remark": "",
+    "cancel_reason": "重复下单",
+    "created_at": "2026-10-08T18:13:00.964",
+    "updated_at": "2026-11-04T22:52:00.995",
+    "paid_at": null,
+    "completed_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 9,
+  "fields": {
+    "order_no": "TK202610210001",
+    "member": 2,
+    "package": 4,
+    "quantity": 1,
+    "unit_price": "3980.00",
+    "total_amount": "3448.50",
+    "discount_amount": "0.00",
+    "pay_amount": "3448.50",
+    "status": "completed",
+    "salesperson": 3,
+    "remark": "会员希望周末到店服务",
+    "cancel_reason": "",
+    "created_at": "2026-10-21T19:42:00.964",
+    "updated_at": "2026-11-04T22:52:01.002",
+    "paid_at": "2026-10-22T14:42:00.964",
+    "completed_at": "2026-10-31T14:42:00.964"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 10,
+  "fields": {
+    "order_no": "TK202610100001",
+    "member": 11,
+    "package": 5,
+    "quantity": 1,
+    "unit_price": "1580.00",
+    "total_amount": "1634.40",
+    "discount_amount": "0.00",
+    "pay_amount": "1634.40",
+    "status": "servicing",
+    "salesperson": 3,
+    "remark": "",
+    "cancel_reason": "",
+    "created_at": "2026-10-10T21:16:00.964",
+    "updated_at": "2026-11-04T22:52:01.006",
+    "paid_at": "2026-10-11T04:16:00.964",
+    "completed_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 11,
+  "fields": {
+    "order_no": "TK202610150001",
+    "member": 3,
+    "package": 3,
+    "quantity": 1,
+    "unit_price": "980.00",
+    "total_amount": "904.40",
+    "discount_amount": "0.00",
+    "pay_amount": "904.40",
+    "status": "servicing",
+    "salesperson": 3,
+    "remark": "会员希望周末到店服务",
+    "cancel_reason": "",
+    "created_at": "2026-10-15T19:33:00.964",
+    "updated_at": "2026-11-04T22:52:01.010",
+    "paid_at": "2026-10-16T13:33:00.964",
+    "completed_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 12,
+  "fields": {
+    "order_no": "TK202611020001",
+    "member": 4,
+    "package": 1,
+    "quantity": 1,
+    "unit_price": "2180.00",
+    "total_amount": "2440.00",
+    "discount_amount": "100.00",
+    "pay_amount": "2340.00",
+    "status": "refunded",
+    "salesperson": 3,
+    "remark": "老会员续卡",
+    "cancel_reason": "",
+    "created_at": "2026-11-02T20:52:00.964",
+    "updated_at": "2026-11-04T22:52:01.014",
+    "paid_at": "2026-11-03T00:52:00.964",
+    "completed_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 13,
+  "fields": {
+    "order_no": "TK202610300001",
+    "member": 6,
+    "package": 3,
+    "quantity": 1,
+    "unit_price": "980.00",
+    "total_amount": "957.60",
+    "discount_amount": "0.00",
+    "pay_amount": "957.60",
+    "status": "completed",
+    "salesperson": 3,
+    "remark": "",
+    "cancel_reason": "",
+    "created_at": "2026-10-30T22:44:00.964",
+    "updated_at": "2026-11-04T22:52:01.018",
+    "paid_at": "2026-10-31T16:44:00.964",
+    "completed_at": "2026-11-08T16:44:00.964"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 14,
+  "fields": {
+    "order_no": "TK202610310001",
+    "member": 5,
+    "package": 3,
+    "quantity": 1,
+    "unit_price": "980.00",
+    "total_amount": "1010.80",
+    "discount_amount": "0.00",
+    "pay_amount": "1010.80",
+    "status": "paid",
+    "salesperson": 3,
+    "remark": "老会员续卡",
+    "cancel_reason": "",
+    "created_at": "2026-10-31T21:24:00.964",
+    "updated_at": "2026-11-04T22:52:01.023",
+    "paid_at": "2026-11-01T03:24:00.964",
+    "completed_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 15,
+  "fields": {
+    "order_no": "TK202610070001",
+    "member": 8,
+    "package": 4,
+    "quantity": 2,
+    "unit_price": "3980.00",
+    "total_amount": "6897.00",
+    "discount_amount": "100.00",
+    "pay_amount": "6797.00",
+    "status": "completed",
+    "salesperson": 3,
+    "remark": "会员希望周末到店服务",
+    "cancel_reason": "",
+    "created_at": "2026-10-07T22:34:00.964",
+    "updated_at": "2026-11-04T22:52:01.031",
+    "paid_at": "2026-10-08T17:34:00.964",
+    "completed_at": "2026-10-12T17:34:00.964"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 16,
+  "fields": {
+    "order_no": "TK202610070002",
+    "member": 12,
+    "package": 1,
+    "quantity": 1,
+    "unit_price": "2180.00",
+    "total_amount": "2074.00",
+    "discount_amount": "200.00",
+    "pay_amount": "1874.00",
+    "status": "completed",
+    "salesperson": 3,
+    "remark": "会员希望周末到店服务",
+    "cancel_reason": "",
+    "created_at": "2026-10-07T17:01:00.964",
+    "updated_at": "2026-11-04T22:52:01.036",
+    "paid_at": "2026-10-07T22:01:00.964",
+    "completed_at": "2026-10-17T22:01:00.964"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 17,
+  "fields": {
+    "order_no": "TK202611020002",
+    "member": 2,
+    "package": 2,
+    "quantity": 1,
+    "unit_price": "2680.00",
+    "total_amount": "2941.20",
+    "discount_amount": "50.00",
+    "pay_amount": "2891.20",
+    "status": "paid",
+    "salesperson": 3,
+    "remark": "活动价购买",
+    "cancel_reason": "",
+    "created_at": "2026-11-02T15:42:00.964",
+    "updated_at": "2026-11-04T22:52:01.039",
+    "paid_at": "2026-11-03T08:42:00.964",
+    "completed_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 18,
+  "fields": {
+    "order_no": "TK202610290001",
+    "member": 2,
+    "package": 3,
+    "quantity": 1,
+    "unit_price": "980.00",
+    "total_amount": "1010.80",
+    "discount_amount": "0.00",
+    "pay_amount": "1010.80",
+    "status": "completed",
+    "salesperson": 3,
+    "remark": "",
+    "cancel_reason": "",
+    "created_at": "2026-10-29T14:16:00.964",
+    "updated_at": "2026-11-04T22:52:01.044",
+    "paid_at": "2026-10-29T22:16:00.964",
+    "completed_at": "2026-11-09T22:16:00.964"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 19,
+  "fields": {
+    "order_no": "TK202611040002",
+    "member": 12,
+    "package": 4,
+    "quantity": 1,
+    "unit_price": "3980.00",
+    "total_amount": "3085.50",
+    "discount_amount": "150.00",
+    "pay_amount": "2935.50",
+    "status": "refunded",
+    "salesperson": 3,
+    "remark": "",
+    "cancel_reason": "",
+    "created_at": "2026-11-04T20:05:00.964",
+    "updated_at": "2026-11-04T22:52:01.048",
+    "paid_at": "2026-11-05T06:05:00.964",
+    "completed_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 20,
+  "fields": {
+    "order_no": "TK202610080002",
+    "member": 6,
+    "package": 1,
+    "quantity": 1,
+    "unit_price": "2180.00",
+    "total_amount": "2196.00",
+    "discount_amount": "150.00",
+    "pay_amount": "2046.00",
+    "status": "refunded",
+    "salesperson": 3,
+    "remark": "",
+    "cancel_reason": "",
+    "created_at": "2026-10-08T22:20:00.964",
+    "updated_at": "2026-11-04T22:52:01.053",
+    "paid_at": "2026-10-09T17:20:00.964",
+    "completed_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 21,
+  "fields": {
+    "order_no": "TK202611030002",
+    "member": 8,
+    "package": 4,
+    "quantity": 1,
+    "unit_price": "3980.00",
+    "total_amount": "3448.50",
+    "discount_amount": "200.00",
+    "pay_amount": "3248.50",
+    "status": "completed",
+    "salesperson": 3,
+    "remark": "活动价购买",
+    "cancel_reason": "",
+    "created_at": "2026-11-03T22:42:00.964",
+    "updated_at": "2026-11-04T22:52:01.058",
+    "paid_at": "2026-11-03T23:42:00.964",
+    "completed_at": "2026-11-05T23:42:00.964"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 22,
+  "fields": {
+    "order_no": "TK202610140001",
+    "member": 9,
+    "package": 4,
+    "quantity": 1,
+    "unit_price": "3980.00",
+    "total_amount": "3630.00",
+    "discount_amount": "0.00",
+    "pay_amount": "3630.00",
+    "status": "pending",
+    "salesperson": 3,
+    "remark": "活动价购买",
+    "cancel_reason": "",
+    "created_at": "2026-10-14T14:54:00.964",
+    "updated_at": "2026-11-04T22:52:01.062",
+    "paid_at": null,
+    "completed_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 23,
+  "fields": {
+    "order_no": "TK202610160001",
+    "member": 7,
+    "package": 2,
+    "quantity": 1,
+    "unit_price": "2680.00",
+    "total_amount": "3096.00",
+    "discount_amount": "0.00",
+    "pay_amount": "3096.00",
+    "status": "paid",
+    "salesperson": 3,
+    "remark": "活动价购买",
+    "cancel_reason": "",
+    "created_at": "2026-10-16T17:09:00.964",
+    "updated_at": "2026-11-04T22:52:01.064",
+    "paid_at": "2026-10-17T02:09:00.964",
+    "completed_at": null
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 24,
+  "fields": {
+    "order_no": "TK202610150002",
+    "member": 9,
+    "package": 2,
+    "quantity": 2,
+    "unit_price": "2680.00",
+    "total_amount": "6192.00",
+    "discount_amount": "100.00",
+    "pay_amount": "6092.00",
+    "status": "completed",
+    "salesperson": 3,
+    "remark": "会员希望周末到店服务",
+    "cancel_reason": "",
+    "created_at": "2026-10-15T22:40:00.964",
+    "updated_at": "2026-11-04T22:52:01.068",
+    "paid_at": "2026-10-15T23:40:00.964",
+    "completed_at": "2026-10-23T23:40:00.964"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "service": 5,
+    "times_total": 8,
+    "times_used": 8,
+    "unit_price": "214.20",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 2,
+  "fields": {
+    "order": 1,
+    "service": 6,
+    "times_total": 4,
+    "times_used": 4,
+    "unit_price": "268.20",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 3,
+  "fields": {
+    "order": 2,
+    "service": 1,
+    "times_total": 6,
+    "times_used": 0,
+    "unit_price": "241.20",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 4,
+  "fields": {
+    "order": 2,
+    "service": 5,
+    "times_total": 5,
+    "times_used": 0,
+    "unit_price": "214.20",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 5,
+  "fields": {
+    "order": 2,
+    "service": 7,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "187.20",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 6,
+  "fields": {
+    "order": 3,
+    "service": 5,
+    "times_total": 8,
+    "times_used": 3,
+    "unit_price": "214.20",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 7,
+  "fields": {
+    "order": 3,
+    "service": 6,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "268.20",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 8,
+  "fields": {
+    "order": 4,
+    "service": 1,
+    "times_total": 6,
+    "times_used": 0,
+    "unit_price": "268.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 9,
+  "fields": {
+    "order": 4,
+    "service": 5,
+    "times_total": 5,
+    "times_used": 0,
+    "unit_price": "238.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 10,
+  "fields": {
+    "order": 4,
+    "service": 7,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "208.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 11,
+  "fields": {
+    "order": 5,
+    "service": 13,
+    "times_total": 8,
+    "times_used": 0,
+    "unit_price": "148.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 12,
+  "fields": {
+    "order": 5,
+    "service": 14,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "158.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 13,
+  "fields": {
+    "order": 6,
+    "service": 1,
+    "times_total": 6,
+    "times_used": 0,
+    "unit_price": "254.60",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 14,
+  "fields": {
+    "order": 6,
+    "service": 5,
+    "times_total": 5,
+    "times_used": 0,
+    "unit_price": "226.10",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 15,
+  "fields": {
+    "order": 6,
+    "service": 7,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "197.60",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 16,
+  "fields": {
+    "order": 7,
+    "service": 5,
+    "times_total": 8,
+    "times_used": 1,
+    "unit_price": "238.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 17,
+  "fields": {
+    "order": 7,
+    "service": 6,
+    "times_total": 4,
+    "times_used": 3,
+    "unit_price": "298.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 18,
+  "fields": {
+    "order": 8,
+    "service": 13,
+    "times_total": 8,
+    "times_used": 0,
+    "unit_price": "133.20",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 19,
+  "fields": {
+    "order": 8,
+    "service": 14,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "142.20",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 20,
+  "fields": {
+    "order": 9,
+    "service": 1,
+    "times_total": 6,
+    "times_used": 5,
+    "unit_price": "254.60",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 21,
+  "fields": {
+    "order": 9,
+    "service": 5,
+    "times_total": 5,
+    "times_used": 3,
+    "unit_price": "226.10",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 22,
+  "fields": {
+    "order": 9,
+    "service": 7,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "197.60",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 23,
+  "fields": {
+    "order": 10,
+    "service": 13,
+    "times_total": 8,
+    "times_used": 6,
+    "unit_price": "133.20",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 24,
+  "fields": {
+    "order": 10,
+    "service": 14,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "142.20",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 25,
+  "fields": {
+    "order": 11,
+    "service": 10,
+    "times_total": 4,
+    "times_used": 2,
+    "unit_price": "100.30",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 26,
+  "fields": {
+    "order": 11,
+    "service": 11,
+    "times_total": 4,
+    "times_used": 3,
+    "unit_price": "125.80",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 27,
+  "fields": {
+    "order": 12,
+    "service": 2,
+    "times_total": 6,
+    "times_used": 0,
+    "unit_price": "228.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 28,
+  "fields": {
+    "order": 12,
+    "service": 1,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "268.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 29,
+  "fields": {
+    "order": 13,
+    "service": 10,
+    "times_total": 4,
+    "times_used": 2,
+    "unit_price": "106.20",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 30,
+  "fields": {
+    "order": 13,
+    "service": 11,
+    "times_total": 4,
+    "times_used": 2,
+    "unit_price": "133.20",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 31,
+  "fields": {
+    "order": 14,
+    "service": 10,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "112.10",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 32,
+  "fields": {
+    "order": 14,
+    "service": 11,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "140.60",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 33,
+  "fields": {
+    "order": 15,
+    "service": 1,
+    "times_total": 12,
+    "times_used": 12,
+    "unit_price": "254.60",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 34,
+  "fields": {
+    "order": 15,
+    "service": 5,
+    "times_total": 10,
+    "times_used": 4,
+    "unit_price": "226.10",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 35,
+  "fields": {
+    "order": 15,
+    "service": 7,
+    "times_total": 8,
+    "times_used": 7,
+    "unit_price": "197.60",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 36,
+  "fields": {
+    "order": 16,
+    "service": 2,
+    "times_total": 6,
+    "times_used": 0,
+    "unit_price": "193.80",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 37,
+  "fields": {
+    "order": 16,
+    "service": 1,
+    "times_total": 4,
+    "times_used": 1,
+    "unit_price": "227.80",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 38,
+  "fields": {
+    "order": 17,
+    "service": 5,
+    "times_total": 8,
+    "times_used": 1,
+    "unit_price": "226.10",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 39,
+  "fields": {
+    "order": 17,
+    "service": 6,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "283.10",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 40,
+  "fields": {
+    "order": 18,
+    "service": 10,
+    "times_total": 4,
+    "times_used": 1,
+    "unit_price": "112.10",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 41,
+  "fields": {
+    "order": 18,
+    "service": 11,
+    "times_total": 4,
+    "times_used": 4,
+    "unit_price": "140.60",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 42,
+  "fields": {
+    "order": 19,
+    "service": 1,
+    "times_total": 6,
+    "times_used": 0,
+    "unit_price": "227.80",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 43,
+  "fields": {
+    "order": 19,
+    "service": 5,
+    "times_total": 5,
+    "times_used": 0,
+    "unit_price": "202.30",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 44,
+  "fields": {
+    "order": 19,
+    "service": 7,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "176.80",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 45,
+  "fields": {
+    "order": 20,
+    "service": 2,
+    "times_total": 6,
+    "times_used": 0,
+    "unit_price": "205.20",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 46,
+  "fields": {
+    "order": 20,
+    "service": 1,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "241.20",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 47,
+  "fields": {
+    "order": 21,
+    "service": 1,
+    "times_total": 6,
+    "times_used": 5,
+    "unit_price": "254.60",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 48,
+  "fields": {
+    "order": 21,
+    "service": 5,
+    "times_total": 5,
+    "times_used": 0,
+    "unit_price": "226.10",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 49,
+  "fields": {
+    "order": 21,
+    "service": 7,
+    "times_total": 4,
+    "times_used": 4,
+    "unit_price": "197.60",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 50,
+  "fields": {
+    "order": 22,
+    "service": 1,
+    "times_total": 6,
+    "times_used": 0,
+    "unit_price": "268.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 51,
+  "fields": {
+    "order": 22,
+    "service": 5,
+    "times_total": 5,
+    "times_used": 0,
+    "unit_price": "238.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 52,
+  "fields": {
+    "order": 22,
+    "service": 7,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "208.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 53,
+  "fields": {
+    "order": 23,
+    "service": 5,
+    "times_total": 8,
+    "times_used": 1,
+    "unit_price": "238.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 54,
+  "fields": {
+    "order": 23,
+    "service": 6,
+    "times_total": 4,
+    "times_used": 0,
+    "unit_price": "298.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 55,
+  "fields": {
+    "order": 24,
+    "service": 5,
+    "times_total": 16,
+    "times_used": 4,
+    "unit_price": "238.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 56,
+  "fields": {
+    "order": 24,
+    "service": 6,
+    "times_total": 8,
+    "times_used": 7,
+    "unit_price": "298.00",
+    "remark": ""
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-20T13:51:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 2,
+  "fields": {
+    "order": 1,
+    "from_status": "pending",
+    "to_status": "completed",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-21T09:51:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 3,
+  "fields": {
+    "order": 2,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-11-04T14:57:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 4,
+  "fields": {
+    "order": 2,
+    "from_status": "pending",
+    "to_status": "refunded",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-11-05T06:57:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 5,
+  "fields": {
+    "order": 3,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-09T21:03:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 6,
+  "fields": {
+    "order": 3,
+    "from_status": "pending",
+    "to_status": "completed",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-10T08:03:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 7,
+  "fields": {
+    "order": 4,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-11T15:28:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 8,
+  "fields": {
+    "order": 4,
+    "from_status": "pending",
+    "to_status": "paid",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-11T22:28:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 9,
+  "fields": {
+    "order": 5,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-11-03T14:32:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 10,
+  "fields": {
+    "order": 6,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-28T14:02:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 11,
+  "fields": {
+    "order": 7,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-11T16:12:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 12,
+  "fields": {
+    "order": 7,
+    "from_status": "pending",
+    "to_status": "completed",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-11T21:12:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 13,
+  "fields": {
+    "order": 8,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-08T18:13:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 14,
+  "fields": {
+    "order": 8,
+    "from_status": "pending",
+    "to_status": "cancelled",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-08T18:13:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 15,
+  "fields": {
+    "order": 9,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-21T19:42:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 16,
+  "fields": {
+    "order": 9,
+    "from_status": "pending",
+    "to_status": "completed",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-22T14:42:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 17,
+  "fields": {
+    "order": 10,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-10T21:16:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 18,
+  "fields": {
+    "order": 10,
+    "from_status": "pending",
+    "to_status": "servicing",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-11T04:16:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 19,
+  "fields": {
+    "order": 11,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-15T19:33:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 20,
+  "fields": {
+    "order": 11,
+    "from_status": "pending",
+    "to_status": "servicing",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-16T13:33:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 21,
+  "fields": {
+    "order": 12,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-11-02T20:52:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 22,
+  "fields": {
+    "order": 12,
+    "from_status": "pending",
+    "to_status": "refunded",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-11-03T00:52:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 23,
+  "fields": {
+    "order": 13,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-30T22:44:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 24,
+  "fields": {
+    "order": 13,
+    "from_status": "pending",
+    "to_status": "completed",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-31T16:44:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 25,
+  "fields": {
+    "order": 14,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-31T21:24:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 26,
+  "fields": {
+    "order": 14,
+    "from_status": "pending",
+    "to_status": "paid",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-11-01T03:24:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 27,
+  "fields": {
+    "order": 15,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-07T22:34:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 28,
+  "fields": {
+    "order": 15,
+    "from_status": "pending",
+    "to_status": "completed",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-08T17:34:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 29,
+  "fields": {
+    "order": 16,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-07T17:01:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 30,
+  "fields": {
+    "order": 16,
+    "from_status": "pending",
+    "to_status": "completed",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-07T22:01:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 31,
+  "fields": {
+    "order": 17,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-11-02T15:42:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 32,
+  "fields": {
+    "order": 17,
+    "from_status": "pending",
+    "to_status": "paid",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-11-03T08:42:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 33,
+  "fields": {
+    "order": 18,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-29T14:16:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 34,
+  "fields": {
+    "order": 18,
+    "from_status": "pending",
+    "to_status": "completed",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-29T22:16:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 35,
+  "fields": {
+    "order": 19,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-11-04T20:05:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 36,
+  "fields": {
+    "order": 19,
+    "from_status": "pending",
+    "to_status": "refunded",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-11-05T06:05:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 37,
+  "fields": {
+    "order": 20,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-08T22:20:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 38,
+  "fields": {
+    "order": 20,
+    "from_status": "pending",
+    "to_status": "refunded",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-09T17:20:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 39,
+  "fields": {
+    "order": 21,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-11-03T22:42:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 40,
+  "fields": {
+    "order": 21,
+    "from_status": "pending",
+    "to_status": "completed",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-11-03T23:42:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 41,
+  "fields": {
+    "order": 22,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-14T14:54:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 42,
+  "fields": {
+    "order": 23,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-16T17:09:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 43,
+  "fields": {
+    "order": 23,
+    "from_status": "pending",
+    "to_status": "paid",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-17T02:09:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 44,
+  "fields": {
+    "order": 24,
+    "from_status": "",
+    "to_status": "pending",
+    "operator": 3,
+    "note": "创建订单",
+    "created_at": "2026-10-15T22:40:00.964"
+  }
+},
+{
+  "model": "orders.orderstatushistory",
+  "pk": 45,
+  "fields": {
+    "order": 24,
+    "from_status": "pending",
+    "to_status": "completed",
+    "operator": 3,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-15T23:40:00.964"
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 1,
+  "fields": {
+    "appointment_no": "YY202610170001",
+    "member": 8,
+    "service": 11,
+    "order_item": null,
+    "therapist": 4,
+    "appoint_date": "2026-10-17",
+    "appoint_time": "11:00",
+    "duration": 40,
+    "status": "finished",
+    "source": "phone",
+    "contact_phone": "13900000008",
+    "remark": "最近睡眠不好",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-16T20:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.076",
+    "confirmed_at": "2026-10-16T22:52:01.073",
+    "finished_at": "2026-10-17T11:00:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 2,
+  "fields": {
+    "appointment_no": "YY202611120001",
+    "member": 4,
+    "service": 14,
+    "order_item": null,
+    "therapist": 1,
+    "appoint_date": "2026-11-12",
+    "appoint_time": "14:30",
+    "duration": 30,
+    "status": "pending",
+    "source": "online",
+    "contact_phone": "13900000004",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": null,
+    "created_at": "2026-11-03T21:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.079",
+    "confirmed_at": null,
+    "finished_at": null,
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 3,
+  "fields": {
+    "appointment_no": "YY202610220001",
+    "member": 11,
+    "service": 13,
+    "order_item": 23,
+    "therapist": 5,
+    "appoint_date": "2026-10-22",
+    "appoint_time": "15:30",
+    "duration": 30,
+    "status": "finished",
+    "source": "phone",
+    "contact_phone": "13900000011",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-19T17:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.083",
+    "confirmed_at": "2026-10-19T19:52:01.073",
+    "finished_at": "2026-10-22T15:30:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 4,
+  "fields": {
+    "appointment_no": "YY202610220002",
+    "member": 10,
+    "service": 3,
+    "order_item": null,
+    "therapist": 1,
+    "appoint_date": "2026-10-22",
+    "appoint_time": "11:00",
+    "duration": 40,
+    "status": "finished",
+    "source": "onsite",
+    "contact_phone": "13900000010",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-19T22:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.086",
+    "confirmed_at": "2026-10-20T00:52:01.073",
+    "finished_at": "2026-10-22T11:00:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 5,
+  "fields": {
+    "appointment_no": "YY202610150001",
+    "member": 8,
+    "service": 5,
+    "order_item": null,
+    "therapist": 5,
+    "appoint_date": "2026-10-15",
+    "appoint_time": "11:00",
+    "duration": 60,
+    "status": "finished",
+    "source": "package",
+    "contact_phone": "13900000008",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-14T20:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.088",
+    "confirmed_at": "2026-10-14T22:52:01.073",
+    "finished_at": "2026-10-15T11:00:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 6,
+  "fields": {
+    "appointment_no": "YY202611080001",
+    "member": 11,
+    "service": 14,
+    "order_item": 24,
+    "therapist": 4,
+    "appoint_date": "2026-11-08",
+    "appoint_time": "10:00",
+    "duration": 30,
+    "status": "no_show",
+    "source": "package",
+    "contact_phone": "13900000011",
+    "remark": "肩颈酸胀明显",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": null,
+    "created_at": "2026-11-01T22:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.091",
+    "confirmed_at": null,
+    "finished_at": null,
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 7,
+  "fields": {
+    "appointment_no": "YY202610180001",
+    "member": 9,
+    "service": 6,
+    "order_item": 56,
+    "therapist": 4,
+    "appoint_date": "2026-10-18",
+    "appoint_time": "13:30",
+    "duration": 50,
+    "status": "finished",
+    "source": "onsite",
+    "contact_phone": "13900000009",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-16T17:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.095",
+    "confirmed_at": "2026-10-16T19:52:01.073",
+    "finished_at": "2026-10-18T13:30:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 8,
+  "fields": {
+    "appointment_no": "YY202611050001",
+    "member": 11,
+    "service": 13,
+    "order_item": 23,
+    "therapist": 5,
+    "appoint_date": "2026-11-05",
+    "appoint_time": "14:30",
+    "duration": 30,
+    "status": "cancelled",
+    "source": "online",
+    "contact_phone": "13900000011",
+    "remark": "最近睡眠不好",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": null,
+    "created_at": "2026-11-04T19:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.109",
+    "confirmed_at": null,
+    "finished_at": null,
+    "cancelled_reason": "身体不适改期"
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 9,
+  "fields": {
+    "appointment_no": "YY202610250001",
+    "member": 1,
+    "service": 14,
+    "order_item": null,
+    "therapist": 1,
+    "appoint_date": "2026-10-25",
+    "appoint_time": "10:00",
+    "duration": 30,
+    "status": "finished",
+    "source": "phone",
+    "contact_phone": "13900000001",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-23T20:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.112",
+    "confirmed_at": "2026-10-23T22:52:01.073",
+    "finished_at": "2026-10-25T10:00:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 10,
+  "fields": {
+    "appointment_no": "YY202611010001",
+    "member": 7,
+    "service": 5,
+    "order_item": 53,
+    "therapist": 1,
+    "appoint_date": "2026-11-01",
+    "appoint_time": "14:30",
+    "duration": 60,
+    "status": "finished",
+    "source": "online",
+    "contact_phone": "13900000007",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-11-01T19:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.116",
+    "confirmed_at": "2026-11-01T21:52:01.073",
+    "finished_at": "2026-11-01T14:30:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 11,
+  "fields": {
+    "appointment_no": "YY202610160001",
+    "member": 9,
+    "service": 5,
+    "order_item": 55,
+    "therapist": 5,
+    "appoint_date": "2026-10-16",
+    "appoint_time": "09:00",
+    "duration": 60,
+    "status": "finished",
+    "source": "onsite",
+    "contact_phone": "13900000009",
+    "remark": "肩颈酸胀明显",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-16T20:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.120",
+    "confirmed_at": "2026-10-16T22:52:01.073",
+    "finished_at": "2026-10-16T09:00:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 12,
+  "fields": {
+    "appointment_no": "YY202610150002",
+    "member": 9,
+    "service": 12,
+    "order_item": null,
+    "therapist": 4,
+    "appoint_date": "2026-10-15",
+    "appoint_time": "16:30",
+    "duration": 60,
+    "status": "finished",
+    "source": "package",
+    "contact_phone": "13900000009",
+    "remark": "肩颈酸胀明显",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-14T19:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.131",
+    "confirmed_at": "2026-10-14T21:52:01.073",
+    "finished_at": "2026-10-15T16:30:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 13,
+  "fields": {
+    "appointment_no": "YY202610200001",
+    "member": 10,
+    "service": 7,
+    "order_item": null,
+    "therapist": 1,
+    "appoint_date": "2026-10-20",
+    "appoint_time": "19:00",
+    "duration": 45,
+    "status": "finished",
+    "source": "package",
+    "contact_phone": "13900000010",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-18T21:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.133",
+    "confirmed_at": "2026-10-18T23:52:01.073",
+    "finished_at": "2026-10-20T19:00:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 14,
+  "fields": {
+    "appointment_no": "YY202611020001",
+    "member": 2,
+    "service": 8,
+    "order_item": null,
+    "therapist": 1,
+    "appoint_date": "2026-11-02",
+    "appoint_time": "16:30",
+    "duration": 40,
+    "status": "servicing",
+    "source": "package",
+    "contact_phone": "13900000002",
+    "remark": "希望手法轻一些",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-11-02T19:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.136",
+    "confirmed_at": "2026-11-02T21:52:01.073",
+    "finished_at": null,
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 15,
+  "fields": {
+    "appointment_no": "YY202611080002",
+    "member": 6,
+    "service": 9,
+    "order_item": null,
+    "therapist": 1,
+    "appoint_date": "2026-11-08",
+    "appoint_time": "10:00",
+    "duration": 45,
+    "status": "pending",
+    "source": "online",
+    "contact_phone": "13900000006",
+    "remark": "希望手法轻一些",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": null,
+    "created_at": "2026-11-04T21:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.138",
+    "confirmed_at": null,
+    "finished_at": null,
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 16,
+  "fields": {
+    "appointment_no": "YY202611020002",
+    "member": 6,
+    "service": 10,
+    "order_item": 29,
+    "therapist": 1,
+    "appoint_date": "2026-11-02",
+    "appoint_time": "10:00",
+    "duration": 30,
+    "status": "finished",
+    "source": "onsite",
+    "contact_phone": "13900000006",
+    "remark": "肩颈酸胀明显",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-31T22:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.142",
+    "confirmed_at": "2026-11-01T00:52:01.073",
+    "finished_at": "2026-11-02T10:00:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 17,
+  "fields": {
+    "appointment_no": "YY202610170002",
+    "member": 2,
+    "service": 5,
+    "order_item": 38,
+    "therapist": 1,
+    "appoint_date": "2026-10-17",
+    "appoint_time": "14:30",
+    "duration": 60,
+    "status": "finished",
+    "source": "onsite",
+    "contact_phone": "13900000002",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-14T18:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.146",
+    "confirmed_at": "2026-10-14T20:52:01.073",
+    "finished_at": "2026-10-17T14:30:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 18,
+  "fields": {
+    "appointment_no": "YY202611050002",
+    "member": 11,
+    "service": 13,
+    "order_item": 23,
+    "therapist": 1,
+    "appoint_date": "2026-11-05",
+    "appoint_time": "09:00",
+    "duration": 30,
+    "status": "no_show",
+    "source": "onsite",
+    "contact_phone": "13900000011",
+    "remark": "肩颈酸胀明显",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": null,
+    "created_at": "2026-11-01T21:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.149",
+    "confirmed_at": null,
+    "finished_at": null,
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 19,
+  "fields": {
+    "appointment_no": "YY202610280001",
+    "member": 1,
+    "service": 2,
+    "order_item": null,
+    "therapist": 5,
+    "appoint_date": "2026-10-28",
+    "appoint_time": "11:00",
+    "duration": 45,
+    "status": "finished",
+    "source": "onsite",
+    "contact_phone": "13900000001",
+    "remark": "最近睡眠不好",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-26T20:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.152",
+    "confirmed_at": "2026-10-26T22:52:01.073",
+    "finished_at": "2026-10-28T11:00:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 20,
+  "fields": {
+    "appointment_no": "YY202610290001",
+    "member": 11,
+    "service": 13,
+    "order_item": 23,
+    "therapist": 1,
+    "appoint_date": "2026-10-29",
+    "appoint_time": "15:30",
+    "duration": 30,
+    "status": "finished",
+    "source": "onsite",
+    "contact_phone": "13900000011",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-29T19:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.165",
+    "confirmed_at": "2026-10-29T21:52:01.073",
+    "finished_at": "2026-10-29T15:30:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 21,
+  "fields": {
+    "appointment_no": "YY202610260001",
+    "member": 3,
+    "service": 10,
+    "order_item": 25,
+    "therapist": 4,
+    "appoint_date": "2026-10-26",
+    "appoint_time": "10:00",
+    "duration": 30,
+    "status": "servicing",
+    "source": "package",
+    "contact_phone": "13900000003",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-25T21:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.191",
+    "confirmed_at": "2026-10-25T23:52:01.073",
+    "finished_at": null,
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 22,
+  "fields": {
+    "appointment_no": "YY202610170003",
+    "member": 6,
+    "service": 10,
+    "order_item": 29,
+    "therapist": 4,
+    "appoint_date": "2026-10-17",
+    "appoint_time": "11:00",
+    "duration": 30,
+    "status": "finished",
+    "source": "phone",
+    "contact_phone": "13900000006",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-14T21:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.195",
+    "confirmed_at": "2026-10-14T23:52:01.073",
+    "finished_at": "2026-10-17T11:00:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 23,
+  "fields": {
+    "appointment_no": "YY202611100001",
+    "member": 11,
+    "service": 8,
+    "order_item": null,
+    "therapist": 5,
+    "appoint_date": "2026-11-10",
+    "appoint_time": "10:00",
+    "duration": 40,
+    "status": "pending",
+    "source": "package",
+    "contact_phone": "13900000011",
+    "remark": "肩颈酸胀明显",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": null,
+    "created_at": "2026-11-02T19:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.198",
+    "confirmed_at": null,
+    "finished_at": null,
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 24,
+  "fields": {
+    "appointment_no": "YY202611030001",
+    "member": 4,
+    "service": 6,
+    "order_item": 17,
+    "therapist": 4,
+    "appoint_date": "2026-11-03",
+    "appoint_time": "19:00",
+    "duration": 50,
+    "status": "finished",
+    "source": "online",
+    "contact_phone": "13900000004",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-11-02T21:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.202",
+    "confirmed_at": "2026-11-02T23:52:01.073",
+    "finished_at": "2026-11-03T19:00:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 25,
+  "fields": {
+    "appointment_no": "YY202610290002",
+    "member": 4,
+    "service": 10,
+    "order_item": null,
+    "therapist": 1,
+    "appoint_date": "2026-10-29",
+    "appoint_time": "09:00",
+    "duration": 30,
+    "status": "finished",
+    "source": "onsite",
+    "contact_phone": "13900000004",
+    "remark": "希望手法轻一些",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-29T20:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.205",
+    "confirmed_at": "2026-10-29T22:52:01.073",
+    "finished_at": "2026-10-29T09:00:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 26,
+  "fields": {
+    "appointment_no": "YY202611110001",
+    "member": 10,
+    "service": 11,
+    "order_item": null,
+    "therapist": 4,
+    "appoint_date": "2026-11-11",
+    "appoint_time": "13:30",
+    "duration": 40,
+    "status": "confirmed",
+    "source": "phone",
+    "contact_phone": "13900000010",
+    "remark": "希望手法轻一些",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-11-02T18:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.215",
+    "confirmed_at": "2026-11-02T20:52:01.073",
+    "finished_at": null,
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 27,
+  "fields": {
+    "appointment_no": "YY202610270001",
+    "member": 3,
+    "service": 11,
+    "order_item": 26,
+    "therapist": 1,
+    "appoint_date": "2026-10-27",
+    "appoint_time": "09:00",
+    "duration": 40,
+    "status": "cancelled",
+    "source": "onsite",
+    "contact_phone": "13900000003",
+    "remark": "最近睡眠不好",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": null,
+    "created_at": "2026-10-27T20:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.220",
+    "confirmed_at": null,
+    "finished_at": null,
+    "cancelled_reason": "顾问排班调整"
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 28,
+  "fields": {
+    "appointment_no": "YY202610250002",
+    "member": 2,
+    "service": 13,
+    "order_item": null,
+    "therapist": 4,
+    "appoint_date": "2026-10-25",
+    "appoint_time": "11:00",
+    "duration": 30,
+    "status": "cancelled",
+    "source": "onsite",
+    "contact_phone": "13900000002",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": null,
+    "created_at": "2026-10-22T22:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.224",
+    "confirmed_at": null,
+    "finished_at": null,
+    "cancelled_reason": "身体不适改期"
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 29,
+  "fields": {
+    "appointment_no": "YY202610150003",
+    "member": 7,
+    "service": 6,
+    "order_item": 54,
+    "therapist": 5,
+    "appoint_date": "2026-10-15",
+    "appoint_time": "13:30",
+    "duration": 50,
+    "status": "no_show",
+    "source": "onsite",
+    "contact_phone": "13900000007",
+    "remark": "希望手法轻一些",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": null,
+    "created_at": "2026-10-12T20:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.228",
+    "confirmed_at": null,
+    "finished_at": null,
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 30,
+  "fields": {
+    "appointment_no": "YY202611070001",
+    "member": 10,
+    "service": 14,
+    "order_item": null,
+    "therapist": 5,
+    "appoint_date": "2026-11-07",
+    "appoint_time": "11:00",
+    "duration": 30,
+    "status": "confirmed",
+    "source": "package",
+    "contact_phone": "13900000010",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-11-03T19:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.230",
+    "confirmed_at": "2026-11-03T21:52:01.073",
+    "finished_at": null,
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 31,
+  "fields": {
+    "appointment_no": "YY202610220003",
+    "member": 1,
+    "service": 8,
+    "order_item": null,
+    "therapist": 1,
+    "appoint_date": "2026-10-22",
+    "appoint_time": "16:30",
+    "duration": 40,
+    "status": "finished",
+    "source": "online",
+    "contact_phone": "13900000001",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-20T17:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.233",
+    "confirmed_at": "2026-10-20T19:52:01.073",
+    "finished_at": "2026-10-22T16:30:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 32,
+  "fields": {
+    "appointment_no": "YY202610230001",
+    "member": 4,
+    "service": 9,
+    "order_item": null,
+    "therapist": 1,
+    "appoint_date": "2026-10-23",
+    "appoint_time": "10:00",
+    "duration": 45,
+    "status": "finished",
+    "source": "package",
+    "contact_phone": "13900000004",
+    "remark": "最近睡眠不好",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-23T19:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.244",
+    "confirmed_at": "2026-10-23T21:52:01.073",
+    "finished_at": "2026-10-23T10:00:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 33,
+  "fields": {
+    "appointment_no": "YY202610200002",
+    "member": 2,
+    "service": 4,
+    "order_item": null,
+    "therapist": 5,
+    "appoint_date": "2026-10-20",
+    "appoint_time": "11:00",
+    "duration": 40,
+    "status": "finished",
+    "source": "onsite",
+    "contact_phone": "13900000002",
+    "remark": "最近睡眠不好",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-17T18:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.247",
+    "confirmed_at": "2026-10-17T20:52:01.073",
+    "finished_at": "2026-10-20T11:00:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointment",
+  "pk": 34,
+  "fields": {
+    "appointment_no": "YY202610290003",
+    "member": 8,
+    "service": 8,
+    "order_item": null,
+    "therapist": 5,
+    "appoint_date": "2026-10-29",
+    "appoint_time": "09:00",
+    "duration": 40,
+    "status": "finished",
+    "source": "onsite",
+    "contact_phone": "13900000008",
+    "remark": "",
+    "exception_note": "",
+    "exception_level": "normal",
+    "created_by": 4,
+    "confirmed_by": 4,
+    "created_at": "2026-10-26T19:52:01.073",
+    "updated_at": "2026-11-04T22:52:01.250",
+    "confirmed_at": "2026-10-26T21:52:01.073",
+    "finished_at": "2026-10-29T09:00:00",
+    "cancelled_reason": ""
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 1,
+  "fields": {
+    "appointment": 1,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-17 11:00 刮痧排毒",
+    "created_at": "2026-10-16T20:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 2,
+  "fields": {
+    "appointment": 1,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-16T23:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 3,
+  "fields": {
+    "appointment": 2,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-11-12 14:30 小儿推拿（助长）",
+    "created_at": "2026-11-03T21:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 4,
+  "fields": {
+    "appointment": 3,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-22 15:30 小儿推拿（脾胃）",
+    "created_at": "2026-10-19T17:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 5,
+  "fields": {
+    "appointment": 3,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-19T20:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 6,
+  "fields": {
+    "appointment": 4,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-22 11:00 温针灸",
+    "created_at": "2026-10-19T22:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 7,
+  "fields": {
+    "appointment": 4,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-20T01:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 8,
+  "fields": {
+    "appointment": 5,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-15 11:00 艾灸温阳调理",
+    "created_at": "2026-10-14T20:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 9,
+  "fields": {
+    "appointment": 5,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-14T23:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 10,
+  "fields": {
+    "appointment": 6,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-11-08 10:00 小儿推拿（助长）",
+    "created_at": "2026-11-01T22:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 11,
+  "fields": {
+    "appointment": 6,
+    "from_status": "pending",
+    "to_status": "no_show",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-11-02T01:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 12,
+  "fields": {
+    "appointment": 7,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-18 13:30 督脉艾灸",
+    "created_at": "2026-10-16T17:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 13,
+  "fields": {
+    "appointment": 7,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-16T20:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 14,
+  "fields": {
+    "appointment": 8,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-11-05 14:30 小儿推拿（脾胃）",
+    "created_at": "2026-11-04T19:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 15,
+  "fields": {
+    "appointment": 8,
+    "from_status": "pending",
+    "to_status": "cancelled",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-11-04T22:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 16,
+  "fields": {
+    "appointment": 9,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-25 10:00 小儿推拿（助长）",
+    "created_at": "2026-10-23T20:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 17,
+  "fields": {
+    "appointment": 9,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-23T23:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 18,
+  "fields": {
+    "appointment": 10,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-11-01 14:30 艾灸温阳调理",
+    "created_at": "2026-11-01T19:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 19,
+  "fields": {
+    "appointment": 10,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-11-01T22:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 20,
+  "fields": {
+    "appointment": 11,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-16 09:00 艾灸温阳调理",
+    "created_at": "2026-10-16T20:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 21,
+  "fields": {
+    "appointment": 11,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-16T23:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 22,
+  "fields": {
+    "appointment": 12,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-15 16:30 体质辨识与调理方案",
+    "created_at": "2026-10-14T19:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 23,
+  "fields": {
+    "appointment": 12,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-14T22:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 24,
+  "fields": {
+    "appointment": 13,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-20 19:00 中药熏蒸",
+    "created_at": "2026-10-18T21:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 25,
+  "fields": {
+    "appointment": 13,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-19T00:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 26,
+  "fields": {
+    "appointment": 14,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-11-02 16:30 中药足浴",
+    "created_at": "2026-11-02T19:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 27,
+  "fields": {
+    "appointment": 14,
+    "from_status": "pending",
+    "to_status": "servicing",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-11-02T22:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 28,
+  "fields": {
+    "appointment": 15,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-11-08 10:00 穴位埋线",
+    "created_at": "2026-11-04T21:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 29,
+  "fields": {
+    "appointment": 16,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-11-02 10:00 拔罐祛湿",
+    "created_at": "2026-10-31T22:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 30,
+  "fields": {
+    "appointment": 16,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-11-01T01:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 31,
+  "fields": {
+    "appointment": 17,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-17 14:30 艾灸温阳调理",
+    "created_at": "2026-10-14T18:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 32,
+  "fields": {
+    "appointment": 17,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-14T21:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 33,
+  "fields": {
+    "appointment": 18,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-11-05 09:00 小儿推拿（脾胃）",
+    "created_at": "2026-11-01T21:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 34,
+  "fields": {
+    "appointment": 18,
+    "from_status": "pending",
+    "to_status": "no_show",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-11-02T00:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 35,
+  "fields": {
+    "appointment": 19,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-28 11:00 肩颈调理推拿",
+    "created_at": "2026-10-26T20:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 36,
+  "fields": {
+    "appointment": 19,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-26T23:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 37,
+  "fields": {
+    "appointment": 20,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-29 15:30 小儿推拿（脾胃）",
+    "created_at": "2026-10-29T19:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 38,
+  "fields": {
+    "appointment": 20,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-29T22:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 39,
+  "fields": {
+    "appointment": 21,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-26 10:00 拔罐祛湿",
+    "created_at": "2026-10-25T21:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 40,
+  "fields": {
+    "appointment": 21,
+    "from_status": "pending",
+    "to_status": "servicing",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-26T00:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 41,
+  "fields": {
+    "appointment": 22,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-17 11:00 拔罐祛湿",
+    "created_at": "2026-10-14T21:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 42,
+  "fields": {
+    "appointment": 22,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-15T00:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 43,
+  "fields": {
+    "appointment": 23,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-11-10 10:00 中药足浴",
+    "created_at": "2026-11-02T19:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 44,
+  "fields": {
+    "appointment": 24,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-11-03 19:00 督脉艾灸",
+    "created_at": "2026-11-02T21:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 45,
+  "fields": {
+    "appointment": 24,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-11-03T00:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 46,
+  "fields": {
+    "appointment": 25,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-29 09:00 拔罐祛湿",
+    "created_at": "2026-10-29T20:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 47,
+  "fields": {
+    "appointment": 25,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-29T23:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 48,
+  "fields": {
+    "appointment": 26,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-11-11 13:30 刮痧排毒",
+    "created_at": "2026-11-02T18:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 49,
+  "fields": {
+    "appointment": 26,
+    "from_status": "pending",
+    "to_status": "confirmed",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-11-02T21:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 50,
+  "fields": {
+    "appointment": 27,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-27 09:00 刮痧排毒",
+    "created_at": "2026-10-27T20:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 51,
+  "fields": {
+    "appointment": 27,
+    "from_status": "pending",
+    "to_status": "cancelled",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-27T23:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 52,
+  "fields": {
+    "appointment": 28,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-25 11:00 小儿推拿（脾胃）",
+    "created_at": "2026-10-22T22:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 53,
+  "fields": {
+    "appointment": 28,
+    "from_status": "pending",
+    "to_status": "cancelled",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-23T01:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 54,
+  "fields": {
+    "appointment": 29,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-15 13:30 督脉艾灸",
+    "created_at": "2026-10-12T20:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 55,
+  "fields": {
+    "appointment": 29,
+    "from_status": "pending",
+    "to_status": "no_show",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-12T23:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 56,
+  "fields": {
+    "appointment": 30,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-11-07 11:00 小儿推拿（助长）",
+    "created_at": "2026-11-03T19:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 57,
+  "fields": {
+    "appointment": 30,
+    "from_status": "pending",
+    "to_status": "confirmed",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-11-03T22:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 58,
+  "fields": {
+    "appointment": 31,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-22 16:30 中药足浴",
+    "created_at": "2026-10-20T17:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 59,
+  "fields": {
+    "appointment": 31,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-20T20:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 60,
+  "fields": {
+    "appointment": 32,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-23 10:00 穴位埋线",
+    "created_at": "2026-10-23T19:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 61,
+  "fields": {
+    "appointment": 32,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-23T22:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 62,
+  "fields": {
+    "appointment": 33,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-20 11:00 头部经络放松",
+    "created_at": "2026-10-17T18:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 63,
+  "fields": {
+    "appointment": 33,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-17T21:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 64,
+  "fields": {
+    "appointment": 34,
+    "from_status": "",
+    "to_status": "pending",
+    "action": "创建预约",
+    "operator": 4,
+    "note": "2026-10-29 09:00 中药足浴",
+    "created_at": "2026-10-26T19:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmenthistory",
+  "pk": 65,
+  "fields": {
+    "appointment": 34,
+    "from_status": "pending",
+    "to_status": "finished",
+    "action": "状态处理",
+    "operator": 4,
+    "note": "演示数据状态初始化",
+    "created_at": "2026-10-26T22:52:01.073"
+  }
+},
+{
+  "model": "appointments.appointmentattachment",
+  "pk": 1,
+  "fields": {
+    "appointment": 7,
+    "file": "appointments/202611/296ecb32e34848e4988c0d61d77399f5.txt",
+    "original_name": "服务知情同意书.txt",
+    "size": 92,
+    "content_type": "text/plain",
+    "note": "服务前签署",
+    "uploaded_by": 4,
+    "created_at": "2026-11-04T22:52:01.105"
+  }
+},
+{
+  "model": "appointments.appointmentattachment",
+  "pk": 2,
+  "fields": {
+    "appointment": 11,
+    "file": "appointments/202611/48d5df56c92d45e3b41288b5d71a1831.txt",
+    "original_name": "服务知情同意书.txt",
+    "size": 95,
+    "content_type": "text/plain",
+    "note": "服务前签署",
+    "uploaded_by": 4,
+    "created_at": "2026-11-04T22:52:01.129"
+  }
+},
+{
+  "model": "appointments.appointmentattachment",
+  "pk": 3,
+  "fields": {
+    "appointment": 19,
+    "file": "appointments/202611/88962d4f123a412694d410c7ba4c4fcd.txt",
+    "original_name": "服务知情同意书.txt",
+    "size": 95,
+    "content_type": "text/plain",
+    "note": "服务前签署",
+    "uploaded_by": 4,
+    "created_at": "2026-11-04T22:52:01.161"
+  }
+},
+{
+  "model": "appointments.appointmentattachment",
+  "pk": 4,
+  "fields": {
+    "appointment": 20,
+    "file": "appointments/202611/b4389ae1bbc54f33aae7b9438afad3b8.txt",
+    "original_name": "服务知情同意书.txt",
+    "size": 104,
+    "content_type": "text/plain",
+    "note": "服务前签署",
+    "uploaded_by": 4,
+    "created_at": "2026-11-04T22:52:01.187"
+  }
+},
+{
+  "model": "appointments.appointmentattachment",
+  "pk": 5,
+  "fields": {
+    "appointment": 25,
+    "file": "appointments/202611/36efa8693e174159bbe7f07e542b8872.txt",
+    "original_name": "服务知情同意书.txt",
+    "size": 92,
+    "content_type": "text/plain",
+    "note": "服务前签署",
+    "uploaded_by": 4,
+    "created_at": "2026-11-04T22:52:01.213"
+  }
+},
+{
+  "model": "appointments.appointmentattachment",
+  "pk": 6,
+  "fields": {
+    "appointment": 31,
+    "file": "appointments/202611/4742a42cea9c4749881bed14cd44522a.txt",
+    "original_name": "服务知情同意书.txt",
+    "size": 92,
+    "content_type": "text/plain",
+    "note": "服务前签署",
+    "uploaded_by": 4,
+    "created_at": "2026-11-04T22:52:01.242"
+  }
+},
+{
+  "model": "core.menu",
+  "pk": 1,
+  "fields": {
+    "code": "member_center",
+    "name": "会员中心",
+    "url_name": "accounts:profile",
+    "perm_codename": "",
+    "icon": "◉",
+    "role_scope": "member",
+    "group": "member",
+    "sort_order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "core.menu",
+  "pk": 2,
+  "fields": {
+    "code": "member_list",
+    "name": "会员档案",
+    "url_name": "accounts:member_list",
+    "perm_codename": "accounts.view_member",
+    "icon": "◇",
+    "role_scope": "",
+    "group": "member",
+    "sort_order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "core.menu",
+  "pk": 3,
+  "fields": {
+    "code": "service_list",
+    "name": "养生服务",
+    "url_name": "services:list",
+    "perm_codename": "services.view_healthservice",
+    "icon": "❖",
+    "role_scope": "",
+    "group": "service",
+    "sort_order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "core.menu",
+  "pk": 4,
+  "fields": {
+    "code": "order_list",
+    "name": "套餐订单",
+    "url_name": "orders:list",
+    "perm_codename": "orders.view_order",
+    "icon": "▤",
+    "role_scope": "",
+    "group": "order",
+    "sort_order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "core.menu",
+  "pk": 5,
+  "fields": {
+    "code": "appointment_list",
+    "name": "服务预约",
+    "url_name": "appointments:list",
+    "perm_codename": "appointments.view_appointment",
+    "icon": "◷",
+    "role_scope": "",
+    "group": "appointment",
+    "sort_order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "core.menu",
+  "pk": 6,
+  "fields": {
+    "code": "report_search",
+    "name": "多条件查询",
+    "url_name": "reports:search",
+    "perm_codename": "core.query_report",
+    "icon": "⌕",
+    "role_scope": "",
+    "group": "report",
+    "sort_order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "core.menu",
+  "pk": 7,
+  "fields": {
+    "code": "report_statistics",
+    "name": "统计报表",
+    "url_name": "reports:statistics",
+    "perm_codename": "core.view_statistics",
+    "icon": "▥",
+    "role_scope": "",
+    "group": "report",
+    "sort_order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "core.menu",
+  "pk": 8,
+  "fields": {
+    "code": "report_logs",
+    "name": "操作日志",
+    "url_name": "reports:logs",
+    "perm_codename": "core.view_operationlog",
+    "icon": "≡",
+    "role_scope": "",
+    "group": "report",
+    "sort_order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "core.menu",
+  "pk": 9,
+  "fields": {
+    "code": "sys_users",
+    "name": "用户管理",
+    "url_name": "accounts:user_list",
+    "perm_codename": "auth.view_user",
+    "icon": "⚙",
+    "role_scope": "",
+    "group": "system",
+    "sort_order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "core.menu",
+  "pk": 10,
+  "fields": {
+    "code": "sys_roles",
+    "name": "角色权限",
+    "url_name": "accounts:role_list",
+    "perm_codename": "auth.view_group",
+    "icon": "⚿",
+    "role_scope": "",
+    "group": "system",
+    "sort_order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 1,
+  "fields": {
+    "category": "business",
+    "action": "变更订单状态",
+    "target_type": "Order",
+    "target_id": "",
+    "target_repr": "TK202651",
+    "detail": "订单状态流转",
+    "username": "service",
+    "role": "服务主管",
+    "method": "POST",
+    "path": "/services/",
+    "status_code": 200,
+    "duration_ms": 134,
+    "ip": "192.168.1.59",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.253"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 2,
+  "fields": {
+    "category": "business",
+    "action": "新增养生服务",
+    "target_type": "HealthService",
+    "target_id": "",
+    "target_repr": "HY202635",
+    "detail": "维护服务价格与时长",
+    "username": "therapist2",
+    "role": "健康顾问",
+    "method": "POST",
+    "path": "/reports/",
+    "status_code": 200,
+    "duration_ms": 186,
+    "ip": "192.168.1.57",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.253"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 3,
+  "fields": {
+    "category": "query",
+    "action": "导出查询结果",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "43",
+    "detail": "按条件导出报表",
+    "username": "clerk",
+    "role": "订单专员",
+    "method": "GET",
+    "path": "/orders/",
+    "status_code": 200,
+    "duration_ms": 282,
+    "ip": "192.168.1.49",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.253"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 4,
+  "fields": {
+    "category": "auth",
+    "action": "登录系统",
+    "target_type": "User",
+    "target_id": "",
+    "target_repr": "YY20262",
+    "detail": "角色登录成功",
+    "username": "reporter",
+    "role": "报表专员",
+    "method": "POST",
+    "path": "/services/",
+    "status_code": 200,
+    "duration_ms": 298,
+    "ip": "192.168.1.13",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.254"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 5,
+  "fields": {
+    "category": "business",
+    "action": "新增会员档案",
+    "target_type": "Member",
+    "target_id": "",
+    "target_repr": "49",
+    "detail": "建档并录入体质信息",
+    "username": "clerk",
+    "role": "订单专员",
+    "method": "POST",
+    "path": "/orders/",
+    "status_code": 200,
+    "duration_ms": 100,
+    "ip": "192.168.1.35",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.254"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 6,
+  "fields": {
+    "category": "business",
+    "action": "新增养生服务",
+    "target_type": "HealthService",
+    "target_id": "",
+    "target_repr": "TK202665",
+    "detail": "维护服务价格与时长",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "POST",
+    "path": "/appointments/",
+    "status_code": 200,
+    "duration_ms": 257,
+    "ip": "192.168.1.8",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.254"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 7,
+  "fields": {
+    "category": "auth",
+    "action": "登录系统",
+    "target_type": "User",
+    "target_id": "",
+    "target_repr": "SVC0065",
+    "detail": "角色登录成功",
+    "username": "therapist2",
+    "role": "健康顾问",
+    "method": "POST",
+    "path": "/appointments/",
+    "status_code": 200,
+    "duration_ms": 51,
+    "ip": "192.168.1.32",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.254"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 8,
+  "fields": {
+    "category": "business",
+    "action": "新增养生服务",
+    "target_type": "HealthService",
+    "target_id": "",
+    "target_repr": "TK20266",
+    "detail": "维护服务价格与时长",
+    "username": "service",
+    "role": "服务主管",
+    "method": "POST",
+    "path": "/reports/",
+    "status_code": 200,
+    "duration_ms": 131,
+    "ip": "192.168.1.55",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.255"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 9,
+  "fields": {
+    "category": "business",
+    "action": "新增养生服务",
+    "target_type": "HealthService",
+    "target_id": "",
+    "target_repr": "39",
+    "detail": "维护服务价格与时长",
+    "username": "reporter",
+    "role": "报表专员",
+    "method": "POST",
+    "path": "/appointments/",
+    "status_code": 200,
+    "duration_ms": 259,
+    "ip": "192.168.1.21",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.255"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 10,
+  "fields": {
+    "category": "business",
+    "action": "新增养生服务",
+    "target_type": "HealthService",
+    "target_id": "",
+    "target_repr": "YY202659",
+    "detail": "维护服务价格与时长",
+    "username": "service",
+    "role": "服务主管",
+    "method": "POST",
+    "path": "/appointments/",
+    "status_code": 200,
+    "duration_ms": 261,
+    "ip": "192.168.1.14",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.255"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 11,
+  "fields": {
+    "category": "business",
+    "action": "变更订单状态",
+    "target_type": "Order",
+    "target_id": "",
+    "target_repr": "YY202621",
+    "detail": "订单状态流转",
+    "username": "reporter",
+    "role": "报表专员",
+    "method": "POST",
+    "path": "/appointments/",
+    "status_code": 200,
+    "duration_ms": 111,
+    "ip": "192.168.1.54",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.255"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 12,
+  "fields": {
+    "category": "system",
+    "action": "配置角色权限",
+    "target_type": "Group",
+    "target_id": "",
+    "target_repr": "HY202669",
+    "detail": "调整角色菜单与接口权限",
+    "username": "clerk",
+    "role": "订单专员",
+    "method": "POST",
+    "path": "/orders/",
+    "status_code": 200,
+    "duration_ms": 285,
+    "ip": "192.168.1.12",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.256"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 13,
+  "fields": {
+    "category": "business",
+    "action": "创建套餐订单",
+    "target_type": "Order",
+    "target_id": "",
+    "target_repr": "YY202640",
+    "detail": "套餐订单创建并展开明细",
+    "username": "reporter",
+    "role": "报表专员",
+    "method": "POST",
+    "path": "/orders/",
+    "status_code": 200,
+    "duration_ms": 76,
+    "ip": "192.168.1.36",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.256"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 14,
+  "fields": {
+    "category": "business",
+    "action": "变更订单状态",
+    "target_type": "Order",
+    "target_id": "",
+    "target_repr": "YY202631",
+    "detail": "订单状态流转",
+    "username": "reporter",
+    "role": "报表专员",
+    "method": "POST",
+    "path": "/reports/",
+    "status_code": 200,
+    "duration_ms": 20,
+    "ip": "192.168.1.60",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.256"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 15,
+  "fields": {
+    "category": "business",
+    "action": "变更订单状态",
+    "target_type": "Order",
+    "target_id": "",
+    "target_repr": "TK202694",
+    "detail": "订单状态流转",
+    "username": "reporter",
+    "role": "报表专员",
+    "method": "POST",
+    "path": "/reports/",
+    "status_code": 200,
+    "duration_ms": 101,
+    "ip": "192.168.1.36",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.256"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 16,
+  "fields": {
+    "category": "auth",
+    "action": "登录系统",
+    "target_type": "User",
+    "target_id": "",
+    "target_repr": "YY202653",
+    "detail": "角色登录成功",
+    "username": "service",
+    "role": "服务主管",
+    "method": "POST",
+    "path": "/services/",
+    "status_code": 200,
+    "duration_ms": 77,
+    "ip": "192.168.1.8",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.257"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 17,
+  "fields": {
+    "category": "auth",
+    "action": "登录系统",
+    "target_type": "User",
+    "target_id": "",
+    "target_repr": "TK202692",
+    "detail": "角色登录成功",
+    "username": "therapist",
+    "role": "健康顾问",
+    "method": "POST",
+    "path": "/orders/",
+    "status_code": 200,
+    "duration_ms": 224,
+    "ip": "192.168.1.20",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.257"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 18,
+  "fields": {
+    "category": "business",
+    "action": "新增养生服务",
+    "target_type": "HealthService",
+    "target_id": "",
+    "target_repr": "87",
+    "detail": "维护服务价格与时长",
+    "username": "therapist",
+    "role": "健康顾问",
+    "method": "POST",
+    "path": "/services/",
+    "status_code": 200,
+    "duration_ms": 173,
+    "ip": "192.168.1.39",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.257"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 19,
+  "fields": {
+    "category": "auth",
+    "action": "登录系统",
+    "target_type": "User",
+    "target_id": "",
+    "target_repr": "HY202634",
+    "detail": "角色登录成功",
+    "username": "therapist",
+    "role": "健康顾问",
+    "method": "POST",
+    "path": "/reports/",
+    "status_code": 200,
+    "duration_ms": 146,
+    "ip": "192.168.1.44",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.257"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 20,
+  "fields": {
+    "category": "query",
+    "action": "导出查询结果",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "YY202684",
+    "detail": "按条件导出报表",
+    "username": "service",
+    "role": "服务主管",
+    "method": "GET",
+    "path": "/orders/",
+    "status_code": 200,
+    "duration_ms": 156,
+    "ip": "192.168.1.27",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.257"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 21,
+  "fields": {
+    "category": "auth",
+    "action": "登录系统",
+    "target_type": "User",
+    "target_id": "",
+    "target_repr": "HY202676",
+    "detail": "角色登录成功",
+    "username": "therapist",
+    "role": "健康顾问",
+    "method": "POST",
+    "path": "/appointments/",
+    "status_code": 200,
+    "duration_ms": 218,
+    "ip": "192.168.1.29",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.258"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 22,
+  "fields": {
+    "category": "system",
+    "action": "配置角色权限",
+    "target_type": "Group",
+    "target_id": "",
+    "target_repr": "YY202624",
+    "detail": "调整角色菜单与接口权限",
+    "username": "reporter",
+    "role": "报表专员",
+    "method": "POST",
+    "path": "/appointments/",
+    "status_code": 200,
+    "duration_ms": 118,
+    "ip": "192.168.1.32",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.258"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 23,
+  "fields": {
+    "category": "business",
+    "action": "审核服务预约",
+    "target_type": "Appointment",
+    "target_id": "",
+    "target_repr": "SVC0063",
+    "detail": "审核确认预约",
+    "username": "service",
+    "role": "服务主管",
+    "method": "POST",
+    "path": "/services/",
+    "status_code": 200,
+    "duration_ms": 238,
+    "ip": "192.168.1.21",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.258"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 24,
+  "fields": {
+    "category": "business",
+    "action": "更新预约异常备注",
+    "target_type": "Appointment",
+    "target_id": "",
+    "target_repr": "TK202677",
+    "detail": "记录服务过程异常",
+    "username": "service",
+    "role": "服务主管",
+    "method": "POST",
+    "path": "/services/",
+    "status_code": 200,
+    "duration_ms": 116,
+    "ip": "192.168.1.46",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.258"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 25,
+  "fields": {
+    "category": "business",
+    "action": "更新预约异常备注",
+    "target_type": "Appointment",
+    "target_id": "",
+    "target_repr": "SVC0035",
+    "detail": "记录服务过程异常",
+    "username": "therapist2",
+    "role": "健康顾问",
+    "method": "POST",
+    "path": "/orders/",
+    "status_code": 200,
+    "duration_ms": 284,
+    "ip": "192.168.1.49",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.259"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 26,
+  "fields": {
+    "category": "business",
+    "action": "创建套餐订单",
+    "target_type": "Order",
+    "target_id": "",
+    "target_repr": "HY202662",
+    "detail": "套餐订单创建并展开明细",
+    "username": "reporter",
+    "role": "报表专员",
+    "method": "POST",
+    "path": "/orders/",
+    "status_code": 200,
+    "duration_ms": 42,
+    "ip": "192.168.1.24",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.259"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 27,
+  "fields": {
+    "category": "business",
+    "action": "创建套餐订单",
+    "target_type": "Order",
+    "target_id": "",
+    "target_repr": "HY202646",
+    "detail": "套餐订单创建并展开明细",
+    "username": "therapist",
+    "role": "健康顾问",
+    "method": "POST",
+    "path": "/appointments/",
+    "status_code": 200,
+    "duration_ms": 60,
+    "ip": "192.168.1.23",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.259"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 28,
+  "fields": {
+    "category": "business",
+    "action": "创建套餐订单",
+    "target_type": "Order",
+    "target_id": "",
+    "target_repr": "20",
+    "detail": "套餐订单创建并展开明细",
+    "username": "clerk",
+    "role": "订单专员",
+    "method": "POST",
+    "path": "/orders/",
+    "status_code": 200,
+    "duration_ms": 171,
+    "ip": "192.168.1.20",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.259"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 29,
+  "fields": {
+    "category": "business",
+    "action": "新增会员档案",
+    "target_type": "Member",
+    "target_id": "",
+    "target_repr": "72",
+    "detail": "建档并录入体质信息",
+    "username": "reporter",
+    "role": "报表专员",
+    "method": "POST",
+    "path": "/orders/",
+    "status_code": 200,
+    "duration_ms": 20,
+    "ip": "192.168.1.20",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.260"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 30,
+  "fields": {
+    "category": "business",
+    "action": "新增会员档案",
+    "target_type": "Member",
+    "target_id": "",
+    "target_repr": "HY202649",
+    "detail": "建档并录入体质信息",
+    "username": "clerk",
+    "role": "订单专员",
+    "method": "POST",
+    "path": "/orders/",
+    "status_code": 200,
+    "duration_ms": 141,
+    "ip": "192.168.1.50",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.260"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 31,
+  "fields": {
+    "category": "auth",
+    "action": "登录系统",
+    "target_type": "User",
+    "target_id": "",
+    "target_repr": "HY202690",
+    "detail": "角色登录成功",
+    "username": "reporter",
+    "role": "报表专员",
+    "method": "POST",
+    "path": "/services/",
+    "status_code": 200,
+    "duration_ms": 125,
+    "ip": "192.168.1.45",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.260"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 32,
+  "fields": {
+    "category": "business",
+    "action": "新增会员档案",
+    "target_type": "Member",
+    "target_id": "",
+    "target_repr": "TK202696",
+    "detail": "建档并录入体质信息",
+    "username": "therapist",
+    "role": "健康顾问",
+    "method": "POST",
+    "path": "/orders/",
+    "status_code": 200,
+    "duration_ms": 275,
+    "ip": "192.168.1.50",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.261"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 33,
+  "fields": {
+    "category": "business",
+    "action": "更新预约异常备注",
+    "target_type": "Appointment",
+    "target_id": "",
+    "target_repr": "YY202617",
+    "detail": "记录服务过程异常",
+    "username": "clerk",
+    "role": "订单专员",
+    "method": "POST",
+    "path": "/services/",
+    "status_code": 200,
+    "duration_ms": 113,
+    "ip": "192.168.1.46",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.261"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 34,
+  "fields": {
+    "category": "auth",
+    "action": "登录系统",
+    "target_type": "User",
+    "target_id": "",
+    "target_repr": "YY20265",
+    "detail": "角色登录成功",
+    "username": "reporter",
+    "role": "报表专员",
+    "method": "POST",
+    "path": "/reports/",
+    "status_code": 200,
+    "duration_ms": 269,
+    "ip": "192.168.1.12",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.261"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 35,
+  "fields": {
+    "category": "system",
+    "action": "配置角色权限",
+    "target_type": "Group",
+    "target_id": "",
+    "target_repr": "56",
+    "detail": "调整角色菜单与接口权限",
+    "username": "therapist2",
+    "role": "健康顾问",
+    "method": "POST",
+    "path": "/orders/",
+    "status_code": 200,
+    "duration_ms": 138,
+    "ip": "192.168.1.43",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.261"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 36,
+  "fields": {
+    "category": "query",
+    "action": "导出查询结果",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "HY202625",
+    "detail": "按条件导出报表",
+    "username": "reporter",
+    "role": "报表专员",
+    "method": "GET",
+    "path": "/appointments/",
+    "status_code": 200,
+    "duration_ms": 35,
+    "ip": "192.168.1.14",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.262"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 37,
+  "fields": {
+    "category": "system",
+    "action": "配置角色权限",
+    "target_type": "Group",
+    "target_id": "",
+    "target_repr": "SVC0010",
+    "detail": "调整角色菜单与接口权限",
+    "username": "therapist2",
+    "role": "健康顾问",
+    "method": "POST",
+    "path": "/orders/",
+    "status_code": 200,
+    "duration_ms": 266,
+    "ip": "192.168.1.51",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.262"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 38,
+  "fields": {
+    "category": "business",
+    "action": "新增养生服务",
+    "target_type": "HealthService",
+    "target_id": "",
+    "target_repr": "YY20263",
+    "detail": "维护服务价格与时长",
+    "username": "reporter",
+    "role": "报表专员",
+    "method": "POST",
+    "path": "/services/",
+    "status_code": 200,
+    "duration_ms": 147,
+    "ip": "192.168.1.51",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.262"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 39,
+  "fields": {
+    "category": "business",
+    "action": "新增会员档案",
+    "target_type": "Member",
+    "target_id": "",
+    "target_repr": "YY202637",
+    "detail": "建档并录入体质信息",
+    "username": "therapist",
+    "role": "健康顾问",
+    "method": "POST",
+    "path": "/reports/",
+    "status_code": 200,
+    "duration_ms": 25,
+    "ip": "192.168.1.49",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.262"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 40,
+  "fields": {
+    "category": "auth",
+    "action": "登录系统",
+    "target_type": "User",
+    "target_id": "",
+    "target_repr": "HY202637",
+    "detail": "角色登录成功",
+    "username": "clerk",
+    "role": "订单专员",
+    "method": "POST",
+    "path": "/orders/",
+    "status_code": 200,
+    "duration_ms": 67,
+    "ip": "192.168.1.39",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:01.263"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 41,
+  "fields": {
+    "category": "query",
+    "action": "导出养生服务",
+    "target_type": "HealthService",
+    "target_id": "",
+    "target_repr": "",
+    "detail": "导出 14 条服务记录",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/services/export/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:52.145"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 42,
+  "fields": {
+    "category": "query",
+    "action": "导出订单数据",
+    "target_type": "Order",
+    "target_id": "",
+    "target_repr": "",
+    "detail": "导出 24 条订单",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/orders/export/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:52.352"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 43,
+  "fields": {
+    "category": "query",
+    "action": "导出预约数据",
+    "target_type": "Appointment",
+    "target_id": "",
+    "target_repr": "",
+    "detail": "导出 34 条预约",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/appointments/export/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:52.561"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 44,
+  "fields": {
+    "category": "query",
+    "action": "多条件查询",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "套餐订单",
+    "detail": "关键字=空；状态=全部；时间=不限~不限；命中 24 条",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/search/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:52.689"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 45,
+  "fields": {
+    "category": "query",
+    "action": "多条件查询",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "服务预约",
+    "detail": "关键字=空；状态=全部；时间=不限~不限；命中 34 条",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/search/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:52.812"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 46,
+  "fields": {
+    "category": "query",
+    "action": "多条件查询",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "会员档案",
+    "detail": "关键字=空；状态=全部；时间=不限~不限；命中 12 条",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/search/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:52.972"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 47,
+  "fields": {
+    "category": "query",
+    "action": "多条件查询",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "养生服务",
+    "detail": "关键字=空；状态=全部；时间=不限~不限；命中 14 条",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/search/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:53.116"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 48,
+  "fields": {
+    "category": "query",
+    "action": "多条件查询",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "操作日志",
+    "detail": "关键字=空；状态=全部；时间=不限~不限；命中 47 条",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/search/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:53.260"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 49,
+  "fields": {
+    "category": "query",
+    "action": "打印查询结果",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "套餐订单",
+    "detail": "打印 24 条记录",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/print/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:53.601"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 50,
+  "fields": {
+    "category": "query",
+    "action": "导出查询结果",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "套餐订单",
+    "detail": "导出「套餐订单」24 条；条件：dataset=orders",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/export/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:52:53.736"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 51,
+  "fields": {
+    "category": "query",
+    "action": "导出养生服务",
+    "target_type": "HealthService",
+    "target_id": "",
+    "target_repr": "",
+    "detail": "导出 14 条服务记录",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/services/export/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:54:25.775"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 52,
+  "fields": {
+    "category": "query",
+    "action": "导出订单数据",
+    "target_type": "Order",
+    "target_id": "",
+    "target_repr": "",
+    "detail": "导出 24 条订单",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/orders/export/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:54:26.021"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 53,
+  "fields": {
+    "category": "query",
+    "action": "导出预约数据",
+    "target_type": "Appointment",
+    "target_id": "",
+    "target_repr": "",
+    "detail": "导出 34 条预约",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/appointments/export/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:54:26.234"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 54,
+  "fields": {
+    "category": "query",
+    "action": "多条件查询",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "套餐订单",
+    "detail": "关键字=空；状态=全部；时间=不限~不限；命中 24 条",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/search/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:54:26.356"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 55,
+  "fields": {
+    "category": "query",
+    "action": "多条件查询",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "服务预约",
+    "detail": "关键字=空；状态=全部；时间=不限~不限；命中 34 条",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/search/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:54:26.489"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 56,
+  "fields": {
+    "category": "query",
+    "action": "多条件查询",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "会员档案",
+    "detail": "关键字=空；状态=全部；时间=不限~不限；命中 12 条",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/search/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:54:26.650"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 57,
+  "fields": {
+    "category": "query",
+    "action": "多条件查询",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "养生服务",
+    "detail": "关键字=空；状态=全部；时间=不限~不限；命中 14 条",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/search/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:54:26.765"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 58,
+  "fields": {
+    "category": "query",
+    "action": "多条件查询",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "操作日志",
+    "detail": "关键字=空；状态=全部；时间=不限~不限；命中 57 条",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/search/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:54:26.893"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 59,
+  "fields": {
+    "category": "query",
+    "action": "查看统计报表",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "",
+    "detail": "统计区间 2026-10-06~2026-11-04",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/statistics/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:54:27.046"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 60,
+  "fields": {
+    "category": "query",
+    "action": "查看统计报表",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "",
+    "detail": "统计区间 2026-01-01~2026-12-31",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/statistics/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:54:27.182"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 61,
+  "fields": {
+    "category": "query",
+    "action": "打印查询结果",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "套餐订单",
+    "detail": "打印 24 条记录",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/print/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:54:27.330"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 62,
+  "fields": {
+    "category": "query",
+    "action": "导出查询结果",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "套餐订单",
+    "detail": "导出「套餐订单」24 条；条件：dataset=orders",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/export/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:54:27.441"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 63,
+  "fields": {
+    "category": "query",
+    "action": "导出养生服务",
+    "target_type": "HealthService",
+    "target_id": "",
+    "target_repr": "",
+    "detail": "导出 14 条服务记录",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/services/export/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:55:07.943"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 64,
+  "fields": {
+    "category": "query",
+    "action": "导出订单数据",
+    "target_type": "Order",
+    "target_id": "",
+    "target_repr": "",
+    "detail": "导出 24 条订单",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/orders/export/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:55:08.160"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 65,
+  "fields": {
+    "category": "query",
+    "action": "导出预约数据",
+    "target_type": "Appointment",
+    "target_id": "",
+    "target_repr": "",
+    "detail": "导出 34 条预约",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/appointments/export/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:55:08.364"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 66,
+  "fields": {
+    "category": "query",
+    "action": "多条件查询",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "套餐订单",
+    "detail": "关键字=空；状态=全部；时间=不限~不限；命中 24 条",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/search/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:55:08.510"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 67,
+  "fields": {
+    "category": "query",
+    "action": "多条件查询",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "服务预约",
+    "detail": "关键字=空；状态=全部；时间=不限~不限；命中 34 条",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/search/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:55:08.656"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 68,
+  "fields": {
+    "category": "query",
+    "action": "多条件查询",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "会员档案",
+    "detail": "关键字=空；状态=全部；时间=不限~不限；命中 12 条",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/search/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:55:08.800"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 69,
+  "fields": {
+    "category": "query",
+    "action": "多条件查询",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "养生服务",
+    "detail": "关键字=空；状态=全部；时间=不限~不限；命中 14 条",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/search/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:55:08.948"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 70,
+  "fields": {
+    "category": "query",
+    "action": "多条件查询",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "操作日志",
+    "detail": "关键字=空；状态=全部；时间=不限~不限；命中 69 条",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/search/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:55:09.073"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 71,
+  "fields": {
+    "category": "query",
+    "action": "查看统计报表",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "",
+    "detail": "统计区间 2026-10-06~2026-11-04",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/statistics/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:55:09.227"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 72,
+  "fields": {
+    "category": "query",
+    "action": "查看统计报表",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "",
+    "detail": "统计区间 2026-01-01~2026-12-31",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/statistics/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:55:09.378"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 73,
+  "fields": {
+    "category": "query",
+    "action": "打印查询结果",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "套餐订单",
+    "detail": "打印 24 条记录",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/print/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:55:09.518"
+  }
+},
+{
+  "model": "core.operationlog",
+  "pk": 74,
+  "fields": {
+    "category": "query",
+    "action": "导出查询结果",
+    "target_type": "Report",
+    "target_id": "",
+    "target_repr": "套餐订单",
+    "detail": "导出「套餐订单」24 条；条件：dataset=orders",
+    "username": "admin",
+    "role": "系统管理员",
+    "method": "GET",
+    "path": "/reports/export/",
+    "status_code": null,
+    "duration_ms": null,
+    "ip": "127.0.0.1",
+    "user_agent": "",
+    "created_at": "2026-11-04T22:55:09.646"
+  }
+}
+]

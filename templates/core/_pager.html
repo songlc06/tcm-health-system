@@ -1,0 +1,30 @@
+{% load ui_tags %}
+{% if page_obj.paginator.count %}
+<div class="pager">
+  <div>
+    共 <span class="strong">{{ page_obj.paginator.count }}</span> 条
+    {% if page_obj.paginator.num_pages > 1 %}
+      · 第 {{ page_obj.number }} / {{ page_obj.paginator.num_pages }} 页
+    {% endif %}
+  </div>
+  {% if page_obj.paginator.num_pages > 1 %}
+  <div class="pages">
+    {% if page_obj.has_previous %}
+      <a href="?{% querystring page=1 %}">首页</a>
+      <a href="?{% querystring page=page_obj.previous_page_number %}">上一页</a>
+    {% endif %}
+    {% for num in page_obj.paginator.page_range %}
+      {% if num == page_obj.number %}
+        <span class="cur">{{ num }}</span>
+      {% elif num > page_obj.number|add:"-3" and num < page_obj.number|add:"3" %}
+        <a href="?{% querystring page=num %}">{{ num }}</a>
+      {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+      <a href="?{% querystring page=page_obj.next_page_number %}">下一页</a>
+      <a href="?{% querystring page=page_obj.paginator.num_pages %}">末页</a>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
+{% endif %}

@@ -1,0 +1,59 @@
+{% load static %}<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>打印 · {{ dataset.title }}</title>
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+  <style>
+    body { background: #fff; }
+    .print-page { max-width: 1100px; margin: 0 auto; padding: 26px 28px 40px; }
+    .print-head { border-bottom: 2px solid #2f6b4f; padding-bottom: 12px; margin-bottom: 14px; }
+    .print-head h1 { font-size: 20px; margin: 0 0 6px; }
+    .print-meta { font-size: 12px; color: #5f6f65; display: flex; gap: 24px; flex-wrap: wrap; }
+    table.data th, table.data td { padding: 7px 9px; font-size: 12px; }
+    .print-foot { margin-top: 18px; font-size: 11.5px; color: #8a978e; display: flex; justify-content: space-between; }
+    .toolbar { margin-bottom: 16px; }
+    @media print {
+      .toolbar { display: none; }
+      .print-page { padding: 0; max-width: none; }
+      @page { size: A4 landscape; margin: 12mm; }
+    }
+  </style>
+</head>
+<body>
+<div class="print-page">
+  <div class="toolbar">
+    <button class="btn btn-primary btn-sm" onclick="window.print()">打印 / 另存为 PDF</button>
+    <button class="btn btn-outline-secondary btn-sm" onclick="window.close()">关闭</button>
+  </div>
+
+  <div class="print-head">
+    <h1>岐黄养生 · {{ dataset.title }}报表</h1>
+    <div class="print-meta">
+      <span>打印时间：{{ printed_at|date:"Y-m-d H:i" }}</span>
+      <span>操作人：{{ operator.display_name|default:operator.username }}</span>
+      <span>记录数：{{ rows|length }}</span>
+      {% if keyword %}<span>关键字：{{ keyword }}</span>{% endif %}
+      {% if date_from or date_to %}<span>日期：{{ date_from|default:"不限" }} ~ {{ date_to|default:"不限" }}</span>{% endif %}
+    </div>
+  </div>
+
+  <table class="data">
+    <thead><tr>{% for h in headers %}<th>{{ h }}</th>{% endfor %}</tr></thead>
+    <tbody>
+      {% for row in rows %}
+      <tr>{% for cell in row %}<td>{{ cell|default:"—" }}</td>{% endfor %}</tr>
+      {% empty %}
+      <tr><td colspan="{{ headers|length }}">没有符合条件的记录</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="print-foot">
+    <span>岐黄养生会员与服务预约管理系统 · 教学演示数据</span>
+    <span>第 1 页 / 共 1 页</span>
+  </div>
+</div>
+</body>
+</html>

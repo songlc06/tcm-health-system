@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load ui_tags %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block page_title %}{{ page_title }}{% endblock %}
+{% block breadcrumb %}<div class="crumb">学生 3 · 订单明细数据维护</div>{% endblock %}
+
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <div class="detail-grid">
+    <div class="card">
+      <div class="card-head">
+        <h2>明细信息</h2>
+        <a class="btn btn-sm btn-outline-secondary" href="{% url 'orders:detail' order.pk %}">返回订单</a>
+      </div>
+      <div class="card-body">
+        {% if form.non_field_errors %}<div class="flash flash-error">{{ form.non_field_errors.0 }}</div>{% endif %}
+        <div class="form-grid">
+          {% include "partials/form_field.html" with field=form.service %}
+          {% include "partials/form_field.html" with field=form.unit_price %}
+          {% include "partials/form_field.html" with field=form.times_total %}
+          {% include "partials/form_field.html" with field=form.times_used %}
+          {% include "partials/form_field.html" with field=form.remark wide=True %}
+        </div>
+        <div style="margin-top:18px;display:flex;gap:8px">
+          <button class="btn btn-primary" type="submit">保存明细</button>
+          <a class="btn btn-outline-secondary" href="{% url 'orders:detail' order.pk %}">取消</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>当前订单</h2></div>
+      <div class="card-body">
+        <dl class="dl">
+          <dt>订单号</dt><dd class="mono">{{ order.order_no }}</dd>
+          <dt>会员</dt><dd>{{ order.member.name }}（{{ order.member.get_level_display }}）</dd>
+          <dt>套餐</dt><dd>{{ order.package.name }}</dd>
+          <dt>状态</dt><dd><span class="badge-soft {{ order.status|badge }}">{{ order.get_status_display }}</span></dd>
+          <dt>明细合计</dt><dd>{{ order.total_amount|money }} 元</dd>
+          <dt>应付金额</dt><dd class="strong">{{ order.pay_amount|money }} 元</dd>
+        </dl>
+        <div class="muted" style="margin-top:14px;font-size:12px">
+          保存后系统会按明细金额重新计算订单合计与应付金额。
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

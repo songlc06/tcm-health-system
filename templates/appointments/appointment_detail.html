@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+{% load ui_tags %}
+{% block title %}预约详情{% endblock %}
+{% block page_title %}预约详情 · {{ appointment.appointment_no }}{% endblock %}
+{% block breadcrumb %}<div class="crumb">学生 4 · 审核确认、状态流转、异常备注与附件</div>{% endblock %}
+
+{% block content %}
+<div class="detail-grid">
+  <div>
+    <div class="card">
+      <div class="card-head">
+        <h2>预约信息</h2>
+        <div style="display:flex;gap:8px;align-items:center">
+          <span class="badge-soft {{ appointment.status|badge }}">{{ appointment.get_status_display }}</span>
+          {% if appointment.exception_level == 'urgent' %}<span class="badge-soft danger">紧急异常</span>
+          {% elif appointment.exception_level == 'attention' %}<span class="badge-soft warning">需关注</span>{% endif %}
+        </div>
+      </div>
+      <div class="card-body">
+        <dl class="dl">
+          <dt>预约单号</dt><dd class="mono">{{ appointment.appointment_no }}</dd>
+          <dt>会员</dt>
+          <dd>
+            {% if perms.accounts.view_member %}
+              <a href="{% url 'accounts:member_detail' appointment.member.pk %}">{{ appointment.member.name }}</a>
+            {% else %}{{ appointment.member.name }}{% endif %}
+            <span class="muted">（{{ appointment.member.get_level_display }} · {{ appointment.contact_phone }}）</span>
+          </dd>
+          <dt>服务项目</dt>
+          <dd>{{ appointment.service.name }} · {{ appointment.service.category.name }}
+            <span class="muted">（{{ appointment.duration }} 分钟）</span></dd>
+          <dt>预约时间</dt>
+          <dd>{{ appointment.appoint_date|date:"Y 年 n 月 j 日" }} {{ appointment.appoint_time }}</dd>
+          <dt>服务顾问</dt><dd>{{ appointment.therapist.display_name|default:"待分配" }}</dd>
+          <dt>预约来源</dt><dd>{{ appointment.get_source_display }}</dd>
+          <dt>关联套餐</dt>
+          <dd>
+            {% if appointment.order_item %}
+              <a href="{% url 'orders:detail' appointment.order_item.order.pk %}">
+                {{ appointment.order_item.order.order_no }}</a>
+              · {{ appointment.order_item.service.name }}
+              （剩余 {{ appointment.order_item.times_left }} 次）
+            {% else %}<span class="muted">未关联订单（散客/单次）</span>{% endif %}
+          </dd>
+          <dt>会员诉求</dt><dd>{{ appointment.remark|default:"—"|linebreaksbr }}</dd>
+          <dt>创建信息</dt>
+          <dd class="muted">{{ appointment.created_by.display_name|default:"系统" }} ·
+            {{ appointment.created_at|date:"Y-m-d H:i" }}</dd>
+          {% if appointment.confirmed_by %}
+          <dt>审核信息</dt>
+          <dd>{{ appointment.confirmed_by.display_name }} · {{ appointment.confirmed_at|date:"Y-m-d H:i" }}</dd>
+          {% endif %}
+          {% if appointment.finished_at %}
+          <dt>完成时间</dt><dd>{{ appointment.finished_at|date:"Y-m-d H:i" }}</dd>
+          {% endif %}
+          {% if appointment.cancelled_reason %}
+          <dt>取消原因</dt><dd>{{ appointment.cancelled_reason }}</dd>
+          {% endif %}
+        </dl>
+
+        {% if actions %}
+        <div style="margin-top:18px;padding-top:14px;border-top:1px dashed #e5e0d3">
+          <div class="section-title">状态处理</div>
+          <form method="post" action="{% url 'appointments:transition' appointment.pk %}"
+                style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+            {% csrf_token %}
+            <input class="form-control" name="note" placeholder="处理意见 / 取消原因（可选）" style="max-width:280px">
+            {% for action in actions %}
+              {% if action.0 != 'confirm' or perms.appointments.review_appointment %}
+              <button class="btn btn-sm {% if action.2 == 'primary' %}btn-primary{% elif action.2 == 'danger' %}btn-accent{% elif action.2 == 'success' %}btn-primary{% else %}btn-outline-secondary{% endif %}"
+                      type="submit" name="action" value="{{ action.0 }}">{{ action.1 }}</button>
+              {% endif %}
+            {% endfor %}
+          </form>
+          {% if appointment.status == 'pending' and not perms.appointments.review_appointment %}
+          <div class="muted" style="font-size:12px;margin-top:8px">
+            当前角色缺少「审核服务预约」权限，无法确认该预约。
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>异常备注</h2></div>
+      <div class="card-body">
+        {% if appointment.exception_note %}
+        <div class="flash flash-warning" style="margin-bottom:14px">
+          <span>{{ appointment.exception_note|linebreaksbr }}</span>
+        </div>
+        {% endif %}
+        {% if perms.appointments.change_appointment %}
+        <form method="post" action="{% url 'appointments:note' appointment.pk %}">
+          {% csrf_token %}
+          <div class="form-grid">
+            {% include "partials/form_field.html" with field=note_form.exception_level %}
+            {% include "partials/form_field.html" with field=note_form.exception_note wide=True %}
+          </div>
+          <button class="btn btn-primary btn-sm" type="submit" style="margin-top:12px">保存异常备注</button>
+        </form>
+        {% else %}
+        <div class="muted">无修改权限</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>附件</h2>
+        <span class="sub">支持 PDF / 图片 / Word，单个不超过 5MB</span>
+      </div>
+      <div class="card-body">
+        {% if attachments %}
+        <table class="data" style="margin-bottom:14px">
+          <thead><tr><th>文件名</th><th>大小</th><th>说明</th><th>上传人</th><th>操作</th></tr></thead>
+          <tbody>
+            {% for att in attachments %}
+            <tr>
+              <td><a href="{{ att.file.url }}" target="_blank">{{ att.original_name }}</a></td>
+              <td class="num">{{ att.size_kb }} KB</td>
+              <td class="muted">{{ att.note|default:"—" }}</td>
+              <td>{{ att.uploaded_by.display_name|default:"—" }}</td>
+              <td>
+                {% if perms.appointments.change_appointment %}
+                <form method="post" action="{% url 'appointments:attachment_delete' att.pk %}" style="display:inline">
+                  {% csrf_token %}
+                  <button class="btn-link" style="color:#b5452f;background:none;border:0;padding:0"
+                          data-confirm="确认删除附件「{{ att.original_name }}」？">删除</button>
+                </form>
+                {% else %}—{% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% endif %}
+        {% if perms.appointments.change_appointment %}
+        <form method="post" action="{% url 'appointments:attachment_upload' appointment.pk %}"
+              enctype="multipart/form-data" class="filter-bar">
+          {% csrf_token %}
+          <div class="field grow">
+            <label>选择文件</label>
+            {{ attachment_form.file }}
+          </div>
+          <div class="field grow">
+            <label>附件说明</label>
+            {{ attachment_form.note }}
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">上传附件</button>
+          </div>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="card">
+      <div class="card-head"><h2>处理历史</h2><span class="sub">{{ history|length }} 条</span></div>
+      <div class="card-body">
+        {% if history %}
+        <ul class="timeline">
+          {% for h in history %}
+          <li class="{% if forloop.first %}is-first{% endif %}">
+            <div class="t-head">
+              <strong>{{ h.action }}</strong>
+              {% if h.to_status and h.to_status != h.from_status %}
+                <span class="badge-soft {{ h.to_status|badge }}">{{ h.get_to_status_display|default:h.to_status }}</span>
+              {% endif %}
+            </div>
+            <div class="t-time">{{ h.created_at|date:"Y-m-d H:i" }} · {{ h.operator.display_name|default:"系统" }}</div>
+            {% if h.note %}<div class="t-note">{{ h.note }}</div>{% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <div class="empty"><span class="big">◷</span>暂无处理记录</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>会员健康信息</h2></div>
+      <div class="card-body">
+        <dl class="dl">
+          <dt>会员编号</dt><dd class="mono">{{ appointment.member.member_no }}</dd>
+          <dt>等级</dt><dd><span class="badge-soft {{ appointment.member.level|badge }}">{{ appointment.member.get_level_display }}</span></dd>
+          <dt>体质</dt><dd>{{ appointment.member.constitution|default:"未填写" }}</dd>
+          <dt>过敏史</dt><dd>{{ appointment.member.allergy|default:"无" }}</dd>
+          <dt>健康备注</dt><dd>{{ appointment.member.health_notes|default:"—" }}</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

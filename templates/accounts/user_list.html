@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load ui_tags %}
+{% block title %}用户管理{% endblock %}
+{% block page_title %}用户与角色分配{% endblock %}
+{% block breadcrumb %}<div class="crumb">学生 1 · 账号角色、权限组维护</div>{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-head">
+    <h2>系统用户</h2>
+    <a class="btn btn-sm btn-outline-secondary" href="{% url 'accounts:role_list' %}">角色权限配置</a>
+  </div>
+  <div class="card-body">
+    <form method="get" class="filter-bar">
+      <div class="field grow">
+        <label>关键字</label>
+        <input class="form-control" name="keyword" value="{{ keyword }}" placeholder="用户名 / 姓名 / 手机号">
+      </div>
+      <div class="field">
+        <label>角色</label>
+        <select class="form-select" name="role">
+          <option value="">全部角色</option>
+          {% for value, label in roles %}
+            <option value="{{ value }}" {% if role == value %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">查询</button>
+        <a class="btn btn-outline-secondary" href="{% url 'accounts:user_list' %}">重置</a>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-wrap">
+    <table class="data">
+      <thead>
+        <tr><th>账号</th><th>姓名</th><th>角色</th><th>权限组</th><th>手机号</th><th>最近登录</th><th>状态</th><th>操作</th></tr>
+      </thead>
+      <tbody>
+        {% for u in users %}
+        <tr>
+          <td class="mono">{{ u.username }}</td>
+          <td>{{ u.display_name|default:"—" }}</td>
+          <td><span class="badge-soft primary">{{ u.get_role_display }}</span></td>
+          <td>{% for g in u.groups.all %}<span class="tag">{{ g.name }}</span>{% empty %}—{% endfor %}</td>
+          <td class="num">{{ u.phone|default:"—" }}</td>
+          <td class="nowrap muted">{{ u.last_login|date:"Y-m-d H:i"|default:"从未登录" }}</td>
+          <td>
+            {% if u.is_active %}<span class="badge-soft success">正常</span>
+            {% else %}<span class="badge-soft secondary">停用</span>{% endif %}
+          </td>
+          <td>
+            {% if perms.auth.change_user %}
+            <a class="btn-link" href="{% url 'accounts:user_role' u.pk %}">分配角色</a>
+            {% else %}—{% endif %}
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="8"><div class="empty"><span class="big">◇</span>没有符合条件的用户</div></td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% pager page_obj %}
+</div>
+{% endblock %}

@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% load static ui_tags %}
+{% block title %}工作台{% endblock %}
+{% block page_title %}工作台{% endblock %}
+{% block breadcrumb %}<div class="crumb">{{ today|date:"Y 年 n 月 j 日" }} · 今日概览与待办</div>{% endblock %}
+
+{% block content %}
+<div class="kpi-grid">
+  <div class="kpi">
+    <div class="label">在册会员</div>
+    <div class="value">{{ cards.member_total }}<span class="unit">人</span></div>
+  </div>
+  <div class="kpi">
+    <div class="label">在售服务项目</div>
+    <div class="value">{{ cards.service_total }}<span class="unit">项</span></div>
+  </div>
+  <div class="kpi">
+    <div class="label">累计订单（不含取消）</div>
+    <div class="value">{{ cards.order_total }}<span class="unit">单</span></div>
+  </div>
+  <div class="kpi">
+    <div class="label">今日预约</div>
+    <div class="value">{{ cards.appointment_today }}<span class="unit">单</span></div>
+  </div>
+  <div class="kpi accent">
+    <div class="label">待审核预约</div>
+    <div class="value">{{ cards.pending_confirm }}<span class="unit">单</span></div>
+  </div>
+  <div class="kpi accent">
+    <div class="label">累计实收金额</div>
+    <div class="value">{{ cards.revenue|money }}<span class="unit">元</span></div>
+  </div>
+</div>
+
+<div class="detail-grid">
+  <div>
+    <div class="card">
+      <div class="card-head">
+        <h2>近 7 日预约趋势</h2>
+        <span class="sub">数据来源：服务预约单</span>
+      </div>
+      <div class="card-body">
+        <div id="trendChart" class="chart"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>最近预约</h2>
+        <a class="btn btn-sm btn-outline-secondary" href="{% url 'appointments:list' %}">全部预约</a>
+      </div>
+      <div class="card-body tight table-wrap">
+        {% if recent_appointments %}
+        <table class="data">
+          <thead>
+            <tr><th>预约单号</th><th>会员</th><th>服务项目</th><th>时间</th><th>顾问</th><th>状态</th></tr>
+          </thead>
+          <tbody>
+            {% for a in recent_appointments %}
+            <tr data-href="{% url 'appointments:detail' a.pk %}">
+              <td class="mono">{{ a.appointment_no }}</td>
+              <td>{{ a.member.name }}</td>
+              <td>{{ a.service.name }}</td>
+              <td class="nowrap">{{ a.appoint_date|date:"m-d" }} {{ a.appoint_time }}</td>
+              <td>{{ a.therapist.display_name|default:"待分配" }}</td>
+              <td><span class="badge-soft {{ a.status|badge }}">{{ a.get_status_display }}</span></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <div class="empty"><span class="big">◷</span>暂无预约记录</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="card">
+      <div class="card-head"><h2>服务项目分布</h2></div>
+      <div class="card-body">
+        <div id="categoryChart" class="chart chart-sm"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>快捷入口</h2></div>
+      <div class="card-body">
+        <div class="quick-links">
+          <a href="{% url 'appointments:create' %}">＋ 登记预约</a>
+          <a href="{% url 'accounts:member_create' %}">＋ 会员建档</a>
+          <a href="{% url 'services:create' %}">＋ 新增服务</a>
+          <a href="{% url 'orders:create' %}">＋ 创建订单</a>
+          <a href="{% url 'reports:search' %}">多条件查询</a>
+          <a href="{% url 'reports:statistics' %}">统计报表</a>
+        </div>
+        {% if cards.pending_confirm %}
+        <div class="flash flash-warning" style="margin-top:14px">
+          有 {{ cards.pending_confirm }} 条预约待审核，请及时处理。
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>系统说明</h2></div>
+      <div class="card-body" style="font-size:12.5px;color:#5f6f65;line-height:2">
+        业务流程：养生服务 → 套餐订单 → 服务预约 → 查询统计与日志。<br>
+        权限模型：角色（Group）绑定菜单与接口权限，会员仅可见会员中心。<br>
+        数据留痕：预约状态流转、订单状态变更、权限调整均写入操作日志。
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ trend|json_script:"trend-data" }}
+{{ category_rows|json_script:"category-data" }}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'vendor/echarts.min.js' %}"></script>
+<script>
+(function () {
+  var trend = JSON.parse(document.getElementById('trend-data').textContent);
+  var cats = JSON.parse(document.getElementById('category-data').textContent);
+  var ink = '#5f6f65', line = '#e5e0d3';
+
+  var trendChart = echarts.init(document.getElementById('trendChart'));
+  trendChart.setOption({
+    grid: { left: 42, right: 18, top: 34, bottom: 28 },
+    tooltip: { trigger: 'axis' },
+    legend: { data: ['预约总量', '已完成'], right: 0, top: 0, textStyle: { color: ink, fontSize: 12 } },
+    xAxis: {
+      type: 'category', data: trend.map(function (t) { return t.date; }),
+      axisLine: { lineStyle: { color: line } }, axisTick: { show: false },
+      axisLabel: { color: ink }
+    },
+    yAxis: {
+      type: 'value', minInterval: 1,
+      splitLine: { lineStyle: { color: '#f1eee4' } }, axisLabel: { color: ink }
+    },
+    series: [
+      {
+        name: '预约总量', type: 'line', smooth: true, symbolSize: 6,
+        data: trend.map(function (t) { return t.count; }),
+        itemStyle: { color: '#2f6b4f' }, lineStyle: { width: 2.4 },
+        areaStyle: { color: 'rgba(47,107,79,.10)' }
+      },
+      {
+        name: '已完成', type: 'line', smooth: true, symbolSize: 6,
+        data: trend.map(function (t) { return t.finished; }),
+        itemStyle: { color: '#b7852f' }, lineStyle: { width: 2, type: 'dashed' }
+      }
+    ]
+  });
+
+  var catChart = echarts.init(document.getElementById('categoryChart'));
+  catChart.setOption({
+    tooltip: { trigger: 'item' },
+    legend: { bottom: 0, textStyle: { color: ink, fontSize: 11 }, itemWidth: 8, itemHeight: 8 },
+    color: ['#2f6b4f', '#5b8f74', '#b7852f', '#b5452f', '#7c9c8b', '#c9a25a'],
+    series: [{
+      type: 'pie', radius: ['46%', '70%'], center: ['50%', '44%'],
+      avoidLabelOverlap: true,
+      itemStyle: { borderColor: '#fff', borderWidth: 2 },
+      label: { show: false },
+      data: cats.map(function (c) { return { name: c.category__name || '未分类', value: c.total }; })
+    }]
+  });
+
+  window.addEventListener('resize', function () {
+    trendChart.resize(); catChart.resize();
+  });
+})();
+</script>
+{% endblock %}

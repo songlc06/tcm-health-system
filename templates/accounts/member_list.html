@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load ui_tags %}
+{% block title %}会员档案{% endblock %}
+{% block page_title %}会员档案管理{% endblock %}
+{% block breadcrumb %}<div class="crumb">学生 1 · 会员注册、登录、等级与基础资料维护</div>{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-head">
+    <h2>会员查询</h2>
+    <div style="display:flex;gap:8px">
+      {% if perms.accounts.add_member %}
+      <a class="btn btn-primary btn-sm" href="{% url 'accounts:member_create' %}">＋ 会员建档</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="card-body">
+    <form method="get" class="filter-bar">
+      <div class="field grow">
+        <label>关键字</label>
+        <input class="form-control" type="text" name="keyword" value="{{ keyword }}"
+               placeholder="姓名 / 手机号 / 会员编号 / 标签">
+      </div>
+      <div class="field">
+        <label>会员等级</label>
+        <select class="form-select" name="level">
+          <option value="">全部等级</option>
+          {% for value, label in levels %}
+            <option value="{{ value }}" {% if level == value %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label>状态</label>
+        <select class="form-select" name="status">
+          <option value="">全部</option>
+          <option value="active" {% if status == 'active' %}selected{% endif %}>有效</option>
+          <option value="inactive" {% if status == 'inactive' %}selected{% endif %}>停用</option>
+        </select>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">查询</button>
+        <a class="btn btn-outline-secondary" href="{% url 'accounts:member_list' %}">重置</a>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-wrap">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>会员编号</th><th>姓名</th><th>手机号</th><th>等级</th>
+          <th>体质</th><th>订单</th><th>预约</th><th>入会日期</th><th>状态</th><th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for m in members %}
+        <tr data-href="{% url 'accounts:member_detail' m.pk %}">
+          <td class="mono">{{ m.member_no }}</td>
+          <td class="strong">{{ m.name }}{% if m.gender == 'F' %}<span class="muted"> 女</span>{% elif m.gender == 'M' %}<span class="muted"> 男</span>{% endif %}</td>
+          <td class="num">{{ m.phone }}</td>
+          <td><span class="badge-soft {{ m.level|badge }}">{{ m.get_level_display }}</span></td>
+          <td>{{ m.constitution|default:"—" }}</td>
+          <td class="num">{{ m.order_count }}</td>
+          <td class="num">{{ m.appointment_count }}</td>
+          <td class="nowrap">{{ m.join_date|date:"Y-m-d" }}</td>
+          <td>
+            {% if m.is_active %}<span class="badge-soft success">有效</span>
+            {% else %}<span class="badge-soft secondary">停用</span>{% endif %}
+          </td>
+          <td class="nowrap">
+            <a class="btn-link" href="{% url 'accounts:member_detail' m.pk %}">详情</a>
+            {% if perms.accounts.change_member %}
+              <a class="btn-link" href="{% url 'accounts:member_update' m.pk %}">编辑</a>
+            {% endif %}
+            {% if perms.orders.add_order %}
+              <a class="btn-link" href="{% url 'orders:create' %}?member={{ m.pk }}">开单</a>
+            {% endif %}
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="10"><div class="empty"><span class="big">◇</span>没有符合条件的会员</div></td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% pager page_obj %}
+</div>
+{% endblock %}

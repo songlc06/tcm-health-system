@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load ui_tags %}
+{% block title %}个人中心{% endblock %}
+{% block page_title %}个人中心{% endblock %}
+{% block breadcrumb %}<div class="crumb">员工账号信息与最近操作记录</div>{% endblock %}
+
+{% block content %}
+<div class="detail-grid">
+  <div class="card">
+    <div class="card-head">
+      <h2>账号信息</h2>
+      <span class="badge-soft primary">{{ target_user.get_role_display }}</span>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;gap:18px;align-items:center;margin-bottom:18px;flex-wrap:wrap">
+        <div class="avatar" style="width:56px;height:56px;font-size:22px">
+          {{ target_user.display_name|default:target_user.username|slice:":1" }}
+        </div>
+        <div>
+          <div style="font-size:17px;font-weight:650">
+            {{ target_user.display_name|default:target_user.username }}
+          </div>
+          <div class="muted" style="font-size:12.5px">
+            登录账号 {{ target_user.username }} · 加入 {{ target_user.date_joined|date:"Y-m-d" }}
+          </div>
+        </div>
+      </div>
+
+      <table class="kv">
+        <tr><th>联系电话</th><td>{{ target_user.phone|default:"—" }}</td></tr>
+        <tr><th>最近登录 IP</th><td class="mono">{{ target_user.last_login_ip|default:"—" }}</td></tr>
+        <tr><th>所属角色组</th>
+          <td>
+            {% for g in groups %}
+              <span class="badge-soft primary">{{ g.name }}</span>
+            {% empty %}—{% endfor %}
+          </td>
+        </tr>
+        <tr><th>接口权限数</th><td>{{ perm_count }} 项</td></tr>
+      </table>
+
+      <div class="muted" style="font-size:12.5px;margin-top:14px">
+        该账号为员工账号，没有会员档案。会员档案请在「会员档案」菜单中维护。
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h2>我的最近操作</h2><span class="sub">来源于操作日志</span></div>
+    <div class="card-body tight">
+      {% if recent_logs %}
+      <table class="data">
+        <thead><tr><th>时间</th><th>动作</th><th>对象</th></tr></thead>
+        <tbody>
+        {% for log in recent_logs %}
+          <tr>
+            <td class="nowrap">{{ log.created_at|date:"m-d H:i" }}</td>
+            <td>{{ log.action }}</td>
+            <td class="mono">{{ log.target_repr|default:"—" }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <div class="empty"><span class="big">≡</span>暂无操作记录</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 说明：本项目为课程演示，db.sqlite3 与 media 下的演示附件是有意提交的，
+# 便于克隆后直接看到数据（含 12 会员 / 40 订单 / 40 预约等模拟数据）。
+
+# 本地环境与工具
+.env
+.idea/
+.vscode/
+.DS_Store
+*.log
+.cache/
+staticfiles/
+media_test/

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}{% if object %}编辑会员{% else %}会员建档{% endif %}{% endblock %}
+{% block page_title %}{% if object %}编辑会员 · {{ object.name }}{% else %}会员建档{% endif %}{% endblock %}
+{% block breadcrumb %}<div class="crumb">学生 1 · 会员基础资料与等级维护</div>{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-head">
+    <h2>{% if object %}会员资料{% else %}新会员信息{% endif %}</h2>
+    <a class="btn btn-sm btn-outline-secondary" href="{% url 'accounts:member_list' %}">返回列表</a>
+  </div>
+  <div class="card-body">
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {% if form.non_field_errors %}
+        <div class="flash flash-error">{{ form.non_field_errors.0 }}</div>
+      {% endif %}
+      <div class="form-grid">
+        {% include "partials/form_field.html" with field=form.name %}
+        {% include "partials/form_field.html" with field=form.gender %}
+        {% include "partials/form_field.html" with field=form.phone %}
+        {% include "partials/form_field.html" with field=form.birthday %}
+        {% include "partials/form_field.html" with field=form.level %}
+        {% include "partials/form_field.html" with field=form.points %}
+        {% include "partials/form_field.html" with field=form.balance %}
+        {% include "partials/form_field.html" with field=form.constitution %}
+        {% include "partials/form_field.html" with field=form.allergy %}
+        {% include "partials/form_field.html" with field=form.tags %}
+        {% include "partials/form_field.html" with field=form.health_notes wide=True %}
+        {% include "partials/form_field.html" with field=form.remark wide=True %}
+        {% include "partials/form_field.html" with field=form.is_active %}
+      </div>
+      {% if object %}
+      <div class="muted" style="margin-top:14px;font-size:12px">
+        会员编号 {{ object.member_no }} · 建档人 {{ object.created_by.display_name|default:"系统" }} ·
+        创建于 {{ object.created_at|date:"Y-m-d H:i" }}
+      </div>
+      {% endif %}
+      <div style="margin-top:18px;display:flex;gap:8px">
+        <button class="btn btn-primary" type="submit">保存</button>
+        <a class="btn btn-outline-secondary" href="{% url 'accounts:member_list' %}">取消</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

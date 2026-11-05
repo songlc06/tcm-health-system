@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load ui_tags %}
+{% block title %}服务详情{% endblock %}
+{% block page_title %}服务详情 · {{ service.name }}{% endblock %}
+{% block breadcrumb %}<div class="crumb">编码 {{ service.code }} · {{ service.category.name }}</div>{% endblock %}
+
+{% block content %}
+<div class="detail-grid">
+  <div class="card">
+    <div class="card-head">
+      <h2>服务信息</h2>
+      <div style="display:flex;gap:8px">
+        {% if perms.services.change_healthservice %}
+          <a class="btn btn-sm btn-outline-secondary" href="{% url 'services:update' service.pk %}">编辑</a>
+        {% endif %}
+        {% if perms.services.delete_healthservice %}
+          <a class="btn btn-sm btn-outline-secondary" href="{% url 'services:delete' service.pk %}">删除</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+        <div style="font-size:19px;font-weight:650">{{ service.name }}</div>
+        <span class="badge-soft {{ service.status|badge }}">{{ service.get_status_display }}</span>
+        {% if service.is_hot %}<span class="badge-soft warning">热门推荐</span>{% endif %}
+      </div>
+      <dl class="dl">
+        <dt>服务编码</dt><dd class="mono">{{ service.code }}</dd>
+        <dt>所属分类</dt><dd>{{ service.category.name }}</dd>
+        <dt>服务时长</dt><dd>{{ service.duration }} 分钟</dd>
+        <dt>价格</dt><dd>标准价 {{ service.price|money }} 元 / 会员价 {{ service.display_price|money }} 元</dd>
+        <dt>适宜人群</dt><dd>{{ service.suitable_for|default:"—" }}</dd>
+        <dt>禁忌说明</dt><dd>{{ service.contraindication|default:"—" }}</dd>
+        <dt>服务简介</dt><dd>{{ service.summary|default:"—" }}</dd>
+        <dt>服务详情</dt><dd>{{ service.description|default:"—"|linebreaksbr }}</dd>
+        <dt>创建信息</dt>
+        <dd class="muted">{{ service.created_by.display_name|default:"系统" }} · {{ service.created_at|date:"Y-m-d H:i" }}</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div>
+    <div class="card">
+      <div class="card-head"><h2>套餐引用</h2><span class="sub">{{ package_items|length }} 个套餐</span></div>
+      <div class="card-body tight">
+        {% if package_items %}
+        <table class="data">
+          <thead><tr><th>套餐</th><th>次数</th><th>售价</th></tr></thead>
+          <tbody>
+            {% for item in package_items %}
+            <tr>
+              <td>{{ item.package.name }}</td>
+              <td class="num">{{ item.times }}</td>
+              <td class="num">{{ item.package.sale_price|money }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <div class="empty"><span class="big">◇</span>尚未被任何套餐引用</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>预约记录</h2><span class="sub">共 {{ appointment_count }} 次</span></div>
+      <div class="card-body tight">
+        {% if appointments %}
+        <table class="data">
+          <thead><tr><th>会员</th><th>日期</th><th>顾问</th><th>状态</th></tr></thead>
+          <tbody>
+            {% for a in appointments %}
+            <tr data-href="{% url 'appointments:detail' a.pk %}">
+              <td>{{ a.member.name }}</td>
+              <td class="nowrap">{{ a.appoint_date|date:"m-d" }} {{ a.appoint_time }}</td>
+              <td>{{ a.therapist.display_name|default:"—" }}</td>
+              <td><span class="badge-soft {{ a.status|badge }}">{{ a.get_status_display }}</span></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <div class="empty"><span class="big">◷</span>暂无预约</div>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if price_history %}
+    <div class="card">
+      <div class="card-head"><h2>价格变更</h2></div>
+      <div class="card-body tight">
+        <table class="data">
+          <tbody>
+            {% for h in price_history %}
+            <tr>
+              <td class="nowrap muted">{{ h.changed_at|date:"Y-m-d" }}</td>
+              <td class="num">{{ h.old_price|money }} → {{ h.new_price|money }}</td>
+              <td>{{ h.changed_by.display_name|default:"系统" }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

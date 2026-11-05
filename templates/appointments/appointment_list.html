@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% load ui_tags %}
+{% block title %}服务预约{% endblock %}
+{% block page_title %}服务预约管理{% endblock %}
+{% block breadcrumb %}<div class="crumb">学生 4 · 预约处理、审核确认、异常备注与历史追踪</div>{% endblock %}
+
+{% block content %}
+<div class="kpi-grid">
+  <div class="kpi accent">
+    <div class="label">待审核预约</div>
+    <div class="value">{{ pending_count }}<span class="unit">单</span></div>
+  </div>
+  <div class="kpi">
+    <div class="label">今日预约</div>
+    <div class="value">{{ today_count }}<span class="unit">单</span></div>
+  </div>
+  <div class="kpi">
+    <div class="label">筛选结果</div>
+    <div class="value">{{ total }}<span class="unit">单</span></div>
+  </div>
+  <div class="kpi">
+    <div class="label">已完成</div>
+    <div class="value">{{ status_counts.finished|default:"0" }}<span class="unit">单</span></div>
+  </div>
+  <div class="kpi">
+    <div class="label">已取消 / 爽约</div>
+    <div class="value">{{ status_counts.cancelled|default:"0" }} / {{ status_counts.no_show|default:"0" }}</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head">
+    <h2>预约查询</h2>
+    <div style="display:flex;gap:8px">
+      {% if perms.appointments.export_appointment %}
+        <a class="btn btn-sm btn-outline-secondary" href="{% url 'appointments:export' %}">导出 CSV</a>
+      {% endif %}
+      {% if perms.appointments.add_appointment %}
+        <a class="btn btn-sm btn-primary" href="{% url 'appointments:create' %}">＋ 登记预约</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="card-body">
+    <form method="get" class="filter-bar">
+      <div class="field grow">
+        <label>关键字</label>
+        <input class="form-control" name="keyword" value="{{ keyword }}"
+               placeholder="预约单号 / 会员 / 手机号 / 服务项目">
+      </div>
+      <div class="field">
+        <label>预约状态</label>
+        <select class="form-select" name="status">
+          <option value="">全部状态</option>
+          {% for value, label in status_choices %}
+            <option value="{{ value }}" {% if status == value %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label>服务顾问</label>
+        <select class="form-select" name="therapist">
+          <option value="">全部顾问</option>
+          {% for t in therapists %}
+            <option value="{{ t.id }}" {% if therapist_id == t.id|stringformat:"s" %}selected{% endif %}>
+              {{ t.display_name|default:t.username }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label>来源</label>
+        <select class="form-select" name="source">
+          <option value="">全部来源</option>
+          {% for value, label in sources %}
+            <option value="{{ value }}" {% if source == value %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label>开始日期</label>
+        <input class="form-control" type="date" name="date_from" value="{{ date_from }}">
+      </div>
+      <div class="field">
+        <label>结束日期</label>
+        <input class="form-control" type="date" name="date_to" value="{{ date_to }}">
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">查询</button>
+        <a class="btn btn-outline-secondary" href="{% url 'appointments:list' %}">重置</a>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-wrap">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>预约单号</th><th>会员</th><th>服务项目</th><th>预约时间</th>
+          <th>服务顾问</th><th>来源</th><th>状态</th><th>异常</th><th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for a in appointments %}
+        <tr data-href="{% url 'appointments:detail' a.pk %}">
+          <td class="mono">{{ a.appointment_no }}</td>
+          <td>
+            <div class="strong">{{ a.member.name }}</div>
+            <div class="muted" style="font-size:12px">{{ a.contact_phone|default:a.member.phone }}</div>
+          </td>
+          <td>{{ a.service.name }}
+            <div class="muted" style="font-size:11.5px">{{ a.service.duration }} 分钟</div>
+          </td>
+          <td class="nowrap">{{ a.appoint_date|date:"Y-m-d" }} {{ a.appoint_time }}</td>
+          <td>{{ a.therapist.display_name|default:"待分配" }}</td>
+          <td class="muted">{{ a.get_source_display }}</td>
+          <td><span class="badge-soft {{ a.status|badge }}">{{ a.get_status_display }}</span></td>
+          <td>
+            {% if a.exception_level == 'urgent' %}<span class="badge-soft danger">紧急</span>
+            {% elif a.exception_level == 'attention' %}<span class="badge-soft warning">关注</span>
+            {% elif a.exception_note %}<span class="tag">已备注</span>
+            {% else %}<span class="muted">—</span>{% endif %}
+          </td>
+          <td class="nowrap">
+            <a class="btn-link" href="{% url 'appointments:detail' a.pk %}">处理</a>
+          </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="9"><div class="empty"><span class="big">◷</span>没有符合条件的预约</div></td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% pager page_obj %}
+</div>
+{% endblock %}

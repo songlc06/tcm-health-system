@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load ui_tags %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block page_title %}{{ page_title }}{% endblock %}
+{% block breadcrumb %}<div class="crumb">学生 2 · 养生服务信息维护</div>{% endblock %}
+
+{% block content %}
+<form method="post" novalidate>
+  {% csrf_token %}
+  <div class="card">
+    <div class="card-head">
+      <h2>基本信息</h2>
+      <a class="btn btn-sm btn-outline-secondary" href="{% url 'services:list' %}">返回列表</a>
+    </div>
+    <div class="card-body">
+      {% if form.non_field_errors %}
+        <div class="flash flash-error">{{ form.non_field_errors.0 }}</div>
+      {% endif %}
+      <div class="form-grid">
+        {% include "partials/form_field.html" with field=form.code %}
+        {% include "partials/form_field.html" with field=form.name %}
+        {% include "partials/form_field.html" with field=form.category %}
+        {% include "partials/form_field.html" with field=form.duration %}
+        {% include "partials/form_field.html" with field=form.summary wide=True %}
+        {% include "partials/form_field.html" with field=form.description wide=True %}
+        {% include "partials/form_field.html" with field=form.suitable_for %}
+        {% include "partials/form_field.html" with field=form.contraindication %}
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h2>价格与状态</h2></div>
+    <div class="card-body">
+      <div class="form-grid">
+        {% include "partials/form_field.html" with field=form.price %}
+        {% include "partials/form_field.html" with field=form.member_price %}
+        {% include "partials/form_field.html" with field=form.status %}
+        {% include "partials/form_field.html" with field=form.sort_order %}
+        {% include "partials/form_field.html" with field=form.is_hot %}
+      </div>
+      <div style="margin-top:18px;display:flex;gap:8px">
+        <button class="btn btn-primary" type="submit">保存服务</button>
+        <a class="btn btn-outline-secondary" href="{% url 'services:list' %}">取消</a>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% if price_history %}
+<div class="card">
+  <div class="card-head"><h2>价格变更记录</h2></div>
+  <div class="card-body tight">
+    <table class="data">
+      <thead><tr><th>变更时间</th><th>标准价</th><th>会员价</th><th>操作人</th></tr></thead>
+      <tbody>
+        {% for h in price_history %}
+        <tr>
+          <td>{{ h.changed_at|date:"Y-m-d H:i" }}</td>
+          <td class="num">{{ h.old_price|money }} → {{ h.new_price|money }}</td>
+          <td class="num">{{ h.old_member_price|money }} → {{ h.new_member_price|money }}</td>
+          <td>{{ h.changed_by.display_name|default:"系统" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

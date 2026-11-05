@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}创建订单{% endblock %}
+{% block page_title %}创建套餐订单{% endblock %}
+{% block breadcrumb %}<div class="crumb">学生 3 · 选择会员与套餐，保存后自动展开订单明细</div>{% endblock %}
+
+{% block content %}
+<form method="post" novalidate>
+  {% csrf_token %}
+  <div class="detail-grid">
+    <div class="card">
+      <div class="card-head">
+        <h2>订单信息</h2>
+        <a class="btn btn-sm btn-outline-secondary" href="{% url 'orders:list' %}">返回列表</a>
+      </div>
+      <div class="card-body">
+        {% if form.non_field_errors %}<div class="flash flash-error">{{ form.non_field_errors.0 }}</div>{% endif %}
+        <div class="form-grid">
+          {% include "partials/form_field.html" with field=form.member %}
+          {% include "partials/form_field.html" with field=form.package %}
+          {% include "partials/form_field.html" with field=form.quantity %}
+          {% include "partials/form_field.html" with field=form.discount_amount %}
+          {% include "partials/form_field.html" with field=form.remark wide=True %}
+        </div>
+        <div style="margin-top:18px;display:flex;gap:8px">
+          <button class="btn btn-primary" type="submit">保存订单</button>
+          <a class="btn btn-outline-secondary" href="{% url 'orders:list' %}">取消</a>
+        </div>
+        <div class="muted" style="margin-top:12px;font-size:12px">
+          说明：订单保存后按套餐包含的服务自动生成明细，明细单价按会员等级折扣计算；保存后可在详情页继续维护明细。
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="card-head"><h2>套餐预览</h2></div>
+        <div class="card-body" id="packagePreview">
+          <div class="empty" style="padding:26px 8px"><span class="big">◇</span>选择套餐后显示包含服务</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h2>金额预估</h2></div>
+        <div class="card-body">
+          <dl class="dl">
+            <dt>套餐单价</dt><dd id="previewPrice">—</dd>
+            <dt>购买数量</dt><dd id="previewQty">1</dd>
+            <dt>预估合计</dt><dd id="previewTotal" class="strong">—</dd>
+            <dt>有效期</dt><dd id="previewValid">—</dd>
+          </dl>
+          <div class="muted" style="font-size:11.5px;margin-top:10px">
+            最终金额以明细合计为准，会员等级折扣将在保存时自动应用。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+{{ package_payload|json_script:"package-data" }}
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function () {
+  var payload = JSON.parse(document.getElementById('package-data').textContent);
+  var sel = document.getElementById('id_package');
+  var preview = document.getElementById('packagePreview');
+  var qtyInput = document.getElementById('id_quantity');
+  var discountInput = document.getElementById('id_discount_amount');
+  if (!sel) return;
+
+  function render() {
+    var pkg = payload.find(function (p) { return String(p.id) === String(sel.value); });
+    var qty = parseInt(qtyInput.value || 1, 10);
+    if (!pkg) {
+      preview.innerHTML = '<div class="empty" style="padding:26px 8px"><span class="big">◇</span>选择套餐后显示包含服务</div>';
+      document.getElementById('previewPrice').textContent = '—';
+      document.getElementById('previewTotal').textContent = '—';
+      document.getElementById('previewValid').textContent = '—';
+      return;
+    }
+    var rows = pkg.items.map(function (i) {
+      return '<tr><td>' + i.service + '</td><td class="num">×' + (i.times * qty) + '</td>' +
+             '<td class="num">' + i.price.toFixed(2) + '</td></tr>';
+    }).join('');
+    preview.innerHTML = '<table class="data"><thead><tr><th>服务项目</th><th>次数</th><th>参考单价</th></tr></thead>' +
+      '<tbody>' + rows + '</tbody></table>';
+    var total = pkg.items.reduce(function (s, i) { return s + i.times * qty * i.price; }, 0);
+    var discount = parseFloat((discountInput && discountInput.value) || 0) || 0;
+    document.getElementById('previewPrice').textContent = pkg.price.toFixed(2) + ' 元';
+    document.getElementById('previewQty').textContent = qty;
+    document.getElementById('previewTotal').textContent = Math.max(total - discount, 0).toFixed(2) + ' 元';
+    document.getElementById('previewValid').textContent = pkg.valid_days + ' 天';
+  }
+
+  sel.addEventListener('change', render);
+  qtyInput.addEventListener('input', render);
+  if (discountInput) discountInput.addEventListener('input', render);
+  render();
+})();
+</script>
+{% endblock %}

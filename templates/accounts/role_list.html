@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}角色权限{% endblock %}
+{% block page_title %}角色与权限{% endblock %}
+{% block breadcrumb %}<div class="crumb">学生 1 · 角色、菜单与接口访问权限配置</div>{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-head">
+    <h2>系统角色</h2>
+    <div style="display:flex;gap:8px">
+      {% if perms.auth.view_user %}
+        <a class="btn btn-sm btn-outline-secondary" href="{% url 'accounts:user_list' %}">用户与角色分配</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="role-grid">
+      {% for role in roles %}
+      <div class="role-card">
+        <div class="role-top">
+          <span class="role-name">{{ role.name }}</span>
+          <span class="badge-soft secondary">{{ role.member_count }} 人</span>
+        </div>
+        <div class="role-desc">
+          已配置接口权限 <strong>{{ role.perm_count }}</strong> 项
+        </div>
+        <div class="role-actions">
+          {% if perms.auth.change_group %}
+            <a class="btn btn-sm btn-primary" href="{% url 'accounts:role_permission' role.pk %}">配置菜单与权限</a>
+          {% else %}
+            <span class="muted" style="font-size:12px">无配置权限</span>
+          {% endif %}
+        </div>
+      </div>
+      {% empty %}
+      <div class="empty"><span class="big">◇</span>尚未初始化角色，请运行 python manage.py seed_demo</div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><h2>权限模型说明</h2></div>
+  <div class="card-body" style="font-size:13px;line-height:2;color:#5f6f65">
+    <p style="margin:0 0 8px"><strong>菜单权限</strong>：菜单表 Menu 的每一行绑定一个权限 codename，
+      勾选菜单即自动授予对应接口权限，未勾选则侧边栏不显示该菜单。</p>
+    <p style="margin:0 0 8px"><strong>接口权限</strong>：基于 Django 模型级权限（view / add / change / delete），
+      视图通过 PermissionRequiredMixin 校验，缺失权限访问时返回 403 页面。</p>
+    <p style="margin:0"><strong>角色隔离</strong>：会员角色仅可见「会员中心」，无法访问任何后台管理菜单与接口。</p>
+  </div>
+</div>
+{% endblock %}
